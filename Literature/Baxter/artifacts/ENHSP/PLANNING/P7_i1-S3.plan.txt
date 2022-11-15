@@ -1,0 +1,81 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i1 -de 1 -dp 3 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 14
+Aibr Preprocessing
+|F|:32
+|X|:12
+Aibr Preprocessing
+|A|:48
+|P|:84
+|E|:24
+Delta time heuristic model:1.0
+Delta time planning model:3
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=376.0
+f(n) = 1504.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.004) Frontier Size: 0
+f(n) = 1513.0 (Expanded Nodes: 3, Evaluated States: 26, Time: 0.039) Frontier Size: 23
+-------------Time: 10s ; Expanded Nodes: 13828 (Avg-Speed 1382.0 n/s); Evaluated States: 74635
+-------------Time: 20s ; Expanded Nodes: 28728 (Avg-Speed 1436.0 n/s); Evaluated States: 151921
+-------------Time: 30s ; Expanded Nodes: 43145 (Avg-Speed 1438.0 n/s); Evaluated States: 229715
+-------------Time: 40s ; Expanded Nodes: 58436 (Avg-Speed 1460.0 n/s); Evaluated States: 307305
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L6 L7 xyaxes)
+0: -----waiting---- [3]
+3: (stop_movement_increase L6 L7 xyaxes)
+3: (start_movement_increase L6 L7 ZAXES)
+3: -----waiting---- [9]
+9: (stop_movement_increase L6 L7 ZAXES)
+9: (start_movement_increase L2 L3 ZAXES)
+9: -----waiting---- [12]
+12: (stop_movement_increase L2 L3 ZAXES)
+12: (start_movement_increase L4 L5 ZAXES)
+12: -----waiting---- [18]
+18: (stop_movement_increase L4 L5 ZAXES)
+18: (start_movement_decrease L6 L7 ZAXES)
+18: -----waiting---- [21]
+21: (stop_movement_decrease L6 L7 ZAXES)
+21: (start_movement_increase L4 L5 ZAXES)
+21: -----waiting---- [27]
+27: (stop_movement_increase L4 L5 ZAXES)
+27: (start_movement_decrease L3 L4 ZAXES)
+27: -----waiting---- [30]
+30: (stop_movement_decrease L3 L4 ZAXES)
+30: (start_movement_increase L4 L5 ZAXES)
+30: -----waiting---- [33]
+33: (stop_movement_increase L4 L5 ZAXES)
+33: (start_movement_decrease L2 L3 xyaxes)
+33: -----waiting---- [36]
+36: (stop_movement_decrease L2 L3 xyaxes)
+36: (start_movement_increase L2 L3 ZAXES)
+36: -----waiting---- [39]
+39: (stop_movement_increase L2 L3 ZAXES)
+39: (start_movement_decrease L6 L7 xyaxes)
+39: -----waiting---- [45]
+45: (stop_movement_decrease L6 L7 xyaxes)
+45: (start_movement_decrease L2 L3 xyaxes)
+45: -----waiting---- [48]
+48: (stop_movement_decrease L2 L3 xyaxes)
+48: (start_movement_increase L6 L7 xyaxes)
+48: -----waiting---- [51]
+
+Plan-Length:80
+Elapsed Time: 51
+Metric (Search):42.0
+Planning Time (msec): 49526
+Heuristic Time (msec): 48163
+Search Time (msec): 49384
+Expanded Nodes:70869
+States Evaluated:380348
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:77792

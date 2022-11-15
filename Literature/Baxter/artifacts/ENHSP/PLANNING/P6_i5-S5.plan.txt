@@ -1,0 +1,66 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P6_i5 -de 1 -dp 5 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 12
+Aibr Preprocessing
+|F|:27
+|X|:10
+Aibr Preprocessing
+|A|:40
+|P|:60
+|E|:20
+Delta time heuristic model:1.0
+Delta time planning model:5
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=632.0
+f(n) = 2528.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.005) Frontier Size: 0
+f(n) = 2537.0 (Expanded Nodes: 1, Evaluated States: 20, Time: 0.039) Frontier Size: 19
+-------------Time: 10s ; Expanded Nodes: 24210 (Avg-Speed 2421.0 n/s); Evaluated States: 138014
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L5 L6 xyaxes)
+0: -----waiting---- [10]
+10: (stop_movement_increase L5 L6 xyaxes)
+10: (start_movement_decrease L5 L6 ZAXES)
+10: -----waiting---- [20]
+20: (stop_movement_decrease L5 L6 ZAXES)
+20: (start_movement_increase L4 L5 ZAXES)
+20: -----waiting---- [30]
+30: (stop_movement_increase L4 L5 ZAXES)
+30: (start_movement_decrease L5 L6 ZAXES)
+30: -----waiting---- [40]
+40: (stop_movement_decrease L5 L6 ZAXES)
+40: (start_movement_increase L3 L4 ZAXES)
+40: -----waiting---- [45]
+45: (stop_movement_increase L3 L4 ZAXES)
+45: (start_movement_decrease L5 L6 ZAXES)
+45: -----waiting---- [50]
+50: (stop_movement_decrease L5 L6 ZAXES)
+50: (start_movement_decrease L2 L3 xyaxes)
+50: -----waiting---- [60]
+60: (stop_movement_decrease L2 L3 xyaxes)
+60: (start_movement_increase L4 L5 ZAXES)
+60: -----waiting---- [70]
+70: (stop_movement_increase L4 L5 ZAXES)
+70: (start_movement_decrease L2 L3 xyaxes)
+70: -----waiting---- [72]
+
+Plan-Length:90
+Elapsed Time: 72
+Metric (Search):32.0
+Planning Time (msec): 17638
+Heuristic Time (msec): 16806
+Search Time (msec): 17513
+Expanded Nodes:42588
+States Evaluated:244882
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:42396

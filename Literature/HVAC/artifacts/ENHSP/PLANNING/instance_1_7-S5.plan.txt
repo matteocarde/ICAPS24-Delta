@@ -1,0 +1,100 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/HVAC/domain.pddl --problem benchmarks/delta/HVAC/instance_1_7.pddl -de 1 -dp 5 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 11
+Aibr Preprocessing
+|F|:7
+|X|:4
+Aibr Preprocessing
+|A|:11
+|P|:2
+|E|:0
+Delta time heuristic model:1.0
+Delta time planning model:5
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=637.0
+f(n) = 2548.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.006) Frontier Size: 0
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: -----waiting---- [5]
+5: (increase_temp r1)
+5: (increase_temp r1)
+5: (increase_temp r1)
+5: (increase_temp r1)
+5: (increase_temp r1)
+5: (increase_temp r1)
+5: (increase_air_flow r1)
+5: (increase_air_flow r1)
+5: (increase_temp r1)
+5: -----waiting---- [10]
+10: (satisfier r1 k1)
+10: -----waiting---- [15]
+15: (increase_air_flow r1)
+15: (increase_air_flow r1)
+15: (decrease_temp r1)
+15: (decrease_temp r1)
+15: -----waiting---- [20]
+20: (satisfier r1 k2)
+20: -----waiting---- [25]
+25: (increase_temp r1)
+25: (increase_temp r1)
+25: (decrease_air_flow r1)
+25: (decrease_air_flow r1)
+25: -----waiting---- [30]
+30: (increase_air_flow r1)
+30: (increase_air_flow r1)
+30: (increase_temp r1)
+30: (increase_temp r1)
+30: (satisfier r1 k3)
+30: -----waiting---- [35]
+35: (decrease_temp r1)
+35: (decrease_temp r1)
+35: (decrease_air_flow r1)
+35: (decrease_air_flow r1)
+35: -----waiting---- [40]
+40: (increase_air_flow r1)
+40: (increase_air_flow r1)
+40: (decrease_temp r1)
+40: (decrease_temp r1)
+40: (satisfier r1 k4)
+40: -----waiting---- [45]
+45: (decrease_air_flow r1)
+45: (decrease_air_flow r1)
+45: (increase_temp r1)
+45: (increase_temp r1)
+45: -----waiting---- [50]
+50: (satisfier r1 k5)
+50: -----waiting---- [55]
+55: (increase_air_flow r1)
+55: (increase_air_flow r1)
+55: (decrease_temp r1)
+55: (decrease_temp r1)
+55: -----waiting---- [60]
+60: (satisfier r1 k6)
+60: -----waiting---- [65]
+65: (increase_temp r1)
+65: (increase_temp r1)
+65: (decrease_air_flow r1)
+65: (decrease_air_flow r1)
+65: -----waiting---- [70]
+70: (satisfier r1 k7)
+
+Plan-Length:118
+Elapsed Time: 70
+Metric (Search):62.0
+Planning Time (msec): 575
+Heuristic Time (msec): 419
+Search Time (msec): 459
+Expanded Nodes:3399
+States Evaluated:6048
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:1947
+Number of Duplicates detected:7751

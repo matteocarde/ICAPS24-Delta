@@ -1,0 +1,50 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i1 -delta 10 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 10
+Aibr Preprocessing
+|F|:22
+|X|:8
+Aibr Preprocessing
+|A|:32
+|P|:40
+|E|:16
+Delta time heuristic model:10
+Delta time planning model:10
+Delta time search-execution model:10
+Delta time validation model:10
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=48.0
+f(n) = 192.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+f(n) = 193.0 (Expanded Nodes: 1, Evaluated States: 16, Time: 0.019) Frontier Size: 15
+f(n) = 194.0 (Expanded Nodes: 7951, Evaluated States: 20120, Time: 0.955) Frontier Size: 12059
+f(n) = 195.0 (Expanded Nodes: 11048, Evaluated States: 27548, Time: 1.278) Frontier Size: 16327
+f(n) = 196.0 (Expanded Nodes: 15329, Evaluated States: 37740, Time: 1.737) Frontier Size: 22091
+f(n) = 197.0 (Expanded Nodes: 24185, Evaluated States: 58852, Time: 2.658) Frontier Size: 34098
+f(n) = 198.0 (Expanded Nodes: 34175, Evaluated States: 81783, Time: 3.597) Frontier Size: 46588
+f(n) = 199.0 (Expanded Nodes: 60750, Evaluated States: 143217, Time: 6.205) Frontier Size: 80593
+f(n) = 200.0 (Expanded Nodes: 92451, Evaluated States: 214148, Time: 9.141) Frontier Size: 118498
+-------------Time: 10s ; Expanded Nodes: 101692 (Avg-Speed 10169.0 n/s); Evaluated States: 235029
+f(n) = 201.0 (Expanded Nodes: 189076, Evaluated States: 444265, Time: 18.741) Frontier Size: 249142
+Extracting plan with execution delta: 10
+Problem Solved
+
+Found Plan:
+0: (start_movement_decrease L4 L5 ZAXES)
+0: -----waiting---- [20]
+
+Plan-Length:4
+Elapsed Time: 20
+Metric (Search):3.0
+Planning Time (msec): 19273
+Heuristic Time (msec): 17976
+Search Time (msec): 19154
+Expanded Nodes:193953
+States Evaluated:454121
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:210353

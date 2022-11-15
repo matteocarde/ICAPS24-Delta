@@ -1,0 +1,66 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/HVAC/domain-delta.pddl --problem benchmarks/delta/HVAC/delta-problems/2022_11_15_00_29_51/DOMAIN/instance_1_3-10.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 9
+Aibr Preprocessing
+|F|:3
+|X|:6
+Aibr Preprocessing
+|A|:7
+|P|:3
+|E|:1
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=273.0
+f(n) = 1092.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+f(n) = 1093.0 (Expanded Nodes: 115, Evaluated States: 198, Time: 0.057) Frontier Size: 1
+f(n) = 1094.0 (Expanded Nodes: 240, Evaluated States: 412, Time: 0.092) Frontier Size: 2
+f(n) = 1095.0 (Expanded Nodes: 366, Evaluated States: 623, Time: 0.126) Frontier Size: 3
+f(n) = 1096.0 (Expanded Nodes: 497, Evaluated States: 843, Time: 0.148) Frontier Size: 6
+f(n) = 1097.0 (Expanded Nodes: 627, Evaluated States: 1058, Time: 0.161) Frontier Size: 7
+f(n) = 1098.0 (Expanded Nodes: 775, Evaluated States: 1295, Time: 0.176) Frontier Size: 8
+f(n) = 1099.0 (Expanded Nodes: 808, Evaluated States: 1329, Time: 0.179) Frontier Size: 9
+f(n) = 1100.0 (Expanded Nodes: 949, Evaluated States: 1556, Time: 0.193) Frontier Size: 9
+f(n) = 1101.0 (Expanded Nodes: 1097, Evaluated States: 1789, Time: 0.208) Frontier Size: 9
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_air_flow r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: -----waiting---- [10.0]
+10.0: (decrease_temp r1)
+10.0: (decrease_temp r1)
+10.0: (satisfier r1 k1)
+10.0: -----waiting---- [20.0]
+20.0: (increase_temp r1)
+20.0: (increase_temp r1)
+20.0: (satisfier r1 k2)
+20.0: -----waiting---- [30.0]
+30.0: (satisfier r1 k3)
+
+Plan-Length:49
+Elapsed Time: 30.0
+Metric (Search):46.0
+Planning Time (msec): 378
+Heuristic Time (msec): 225
+Search Time (msec): 265
+Expanded Nodes:2098
+States Evaluated:3491
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:1019
+Number of Duplicates detected:3996

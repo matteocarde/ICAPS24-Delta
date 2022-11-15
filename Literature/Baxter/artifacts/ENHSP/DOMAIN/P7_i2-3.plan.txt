@@ -1,0 +1,62 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_15_00_29_51/DOMAIN/P7_i2-3.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 14
+Aibr Preprocessing
+|F|:32
+|X|:14
+Aibr Preprocessing
+|A|:48
+|P|:85
+|E|:25
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=804.0
+f(n) = 3216.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.006) Frontier Size: 0
+-------------Time: 10s ; Expanded Nodes: 20078 (Avg-Speed 2007.0 n/s); Evaluated States: 62152
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L2 L3 ZAXES)
+0: -----waiting---- [6.0]
+6.0: (stop_movement_increase L2 L3 ZAXES)
+6.0: (start_movement_increase L4 L5 xyaxes)
+6.0: -----waiting---- [9.0]
+9.0: (stop_movement_increase L4 L5 xyaxes)
+9.0: (start_movement_increase L2 L3 ZAXES)
+9.0: -----waiting---- [12.0]
+12.0: (stop_movement_increase L2 L3 ZAXES)
+12.0: (start_movement_increase L4 L5 xyaxes)
+12.0: -----waiting---- [18.0]
+18.0: (stop_movement_increase L4 L5 xyaxes)
+18.0: (start_movement_increase L2 L3 ZAXES)
+18.0: -----waiting---- [21.0]
+21.0: (stop_movement_increase L2 L3 ZAXES)
+21.0: (start_movement_decrease L5 L6 xyaxes)
+21.0: -----waiting---- [24.0]
+24.0: (stop_movement_decrease L5 L6 xyaxes)
+24.0: (start_movement_increase L6 L7 xyaxes)
+24.0: -----waiting---- [27.0]
+27.0: (stop_movement_increase L6 L7 xyaxes)
+27.0: (start_movement_increase L4 L5 xyaxes)
+27.0: -----waiting---- [28.0]
+
+Plan-Length:53
+Elapsed Time: 28.0
+Metric (Search):43.0
+Planning Time (msec): 10465
+Heuristic Time (msec): 10044
+Search Time (msec): 10318
+Expanded Nodes:21581
+States Evaluated:65060
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:9200

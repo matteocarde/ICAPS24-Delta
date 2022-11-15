@@ -1,0 +1,47 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Descent/domain.pddl --problem benchmarks/delta/Descent/prob_earth10.pddl -delta 2 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 7
+Aibr Preprocessing
+|F|:5
+|X|:5
+Aibr Preprocessing
+|A|:4
+|P|:2
+|E|:1
+Delta time heuristic model:2
+Delta time planning model:2
+Delta time search-execution model:2
+Delta time validation model:2
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=56.0
+f(n) = 224.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+Extracting plan with execution delta: 2
+Problem Solved
+
+Found Plan:
+0: (start_descent)
+0: -----waiting---- [12]
+12: (start-thrust)
+12: -----waiting---- [28]
+28: (stop-thrust)
+28: -----waiting---- [30]
+30: (start-thrust)
+30: -----waiting---- [36]
+36: (land)
+
+Plan-Length:23
+Elapsed Time: 36
+Metric (Search):23.0
+Planning Time (msec): 130
+Heuristic Time (msec): 13
+Search Time (msec): 26
+Expanded Nodes:76
+States Evaluated:135
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:21
+Number of Duplicates detected:15

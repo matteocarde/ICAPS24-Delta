@@ -1,0 +1,87 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/HVAC/domain.pddl --problem benchmarks/delta/HVAC/instance_1_18.pddl -delta 2 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 20
+Aibr Preprocessing
+|F|:18
+|X|:4
+Aibr Preprocessing
+|A|:22
+|P|:2
+|E|:0
+Delta time heuristic model:2
+Delta time planning model:2
+Delta time search-execution model:2
+Delta time validation model:2
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=1315.0
+f(n) = 5260.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.007) Frontier Size: 0
+Extracting plan with execution delta: 2
+Problem Solved
+
+Found Plan:
+0: -----waiting---- [8]
+8: (increase_temp r1)
+8: (increase_temp r1)
+8: (increase_temp r1)
+8: (increase_temp r1)
+8: (increase_temp r1)
+8: (increase_temp r1)
+8: (increase_temp r1)
+8: (increase_air_flow r1)
+8: -----waiting---- [10]
+10: (satisfier r1 k1)
+10: -----waiting---- [20]
+20: (satisfier r1 k2)
+20: -----waiting---- [30]
+30: (satisfier r1 k3)
+30: -----waiting---- [40]
+40: (satisfier r1 k4)
+40: -----waiting---- [50]
+50: (satisfier r1 k5)
+50: -----waiting---- [60]
+60: (satisfier r1 k6)
+60: -----waiting---- [70]
+70: (satisfier r1 k7)
+70: -----waiting---- [80]
+80: (satisfier r1 k8)
+80: -----waiting---- [90]
+90: (satisfier r1 k9)
+90: -----waiting---- [100]
+100: (satisfier r1 k10)
+100: -----waiting---- [110]
+110: (satisfier r1 k11)
+110: -----waiting---- [120]
+120: (satisfier r1 k12)
+120: -----waiting---- [130]
+130: (satisfier r1 k13)
+130: -----waiting---- [140]
+140: (satisfier r1 k14)
+140: -----waiting---- [150]
+150: (satisfier r1 k15)
+150: -----waiting---- [160]
+160: (satisfier r1 k16)
+160: -----waiting---- [168]
+168: (decrease_air_flow r1)
+168: -----waiting---- [170]
+170: (satisfier r1 k17)
+170: -----waiting---- [178]
+178: (increase_air_flow r1)
+178: -----waiting---- [180]
+180: (satisfier r1 k18)
+
+Plan-Length:118
+Elapsed Time: 180
+Metric (Search):118.0
+Planning Time (msec): 693
+Heuristic Time (msec): 519
+Search Time (msec): 552
+Expanded Nodes:843
+States Evaluated:1759
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:333
+Number of Duplicates detected:1775

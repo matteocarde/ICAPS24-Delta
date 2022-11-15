@@ -1,0 +1,43 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Linear-Generator/domain.pddl --problem benchmarks/delta/Linear-Generator/instance_10.pddl -delta 100 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 8
+Aibr Preprocessing
+|F|:34
+|X|:12
+Aibr Preprocessing
+|A|:11
+|P|:11
+|E|:13
+Delta time heuristic model:100
+Delta time planning model:100
+Delta time search-execution model:100
+Delta time validation model:100
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=311.0
+f(n) = 1244.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+Extracting plan with execution delta: 100
+Problem Solved
+
+Found Plan:
+0: (start_refueling gen_1 tank_5)
+0: -----waiting---- [100]
+100: (start_refueling gen_1 tank_4)
+100: (turn_on gen_1)
+100: -----waiting---- [1100]
+
+Plan-Length:16
+Elapsed Time: 1100
+Metric (Search):14.0
+Planning Time (msec): 280
+Heuristic Time (msec): 139
+Search Time (msec): 167
+Expanded Nodes:780
+States Evaluated:1127
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:255
+Number of Duplicates detected:2817

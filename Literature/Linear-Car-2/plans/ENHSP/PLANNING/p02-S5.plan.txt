@@ -1,0 +1,87 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Linear-Car-2/domain.pddl --problem benchmarks/delta/Linear-Car-2/p02.pddl -de 1 -dp 5 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 6
+Aibr Preprocessing
+|F|:2
+|X|:3
+Aibr Preprocessing
+|A|:4
+|P|:2
+|E|:1
+Delta time heuristic model:1.0
+Delta time planning model:5
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=125.0
+f(n) = 500.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_car)
+0: (accelerate)
+0: -----waiting---- [10]
+10: (accelerate)
+10: -----waiting---- [20]
+20: (decelerate)
+20: -----waiting---- [25]
+25: (decelerate)
+25: -----waiting---- [30]
+30: (decelerate)
+30: (decelerate)
+30: -----waiting---- [50]
+50: (accelerate)
+50: -----waiting---- [55]
+55: (decelerate)
+55: (decelerate)
+55: (decelerate)
+55: -----waiting---- [60]
+60: (accelerate)
+60: -----waiting---- [65]
+65: (decelerate)
+65: (decelerate)
+65: (decelerate)
+65: -----waiting---- [70]
+70: (accelerate)
+70: -----waiting---- [75]
+75: (decelerate)
+75: (decelerate)
+75: (decelerate)
+75: -----waiting---- [80]
+80: (accelerate)
+80: -----waiting---- [85]
+85: (decelerate)
+85: (decelerate)
+85: (decelerate)
+85: -----waiting---- [90]
+90: (accelerate)
+90: -----waiting---- [95]
+95: (decelerate)
+95: (decelerate)
+95: (decelerate)
+95: -----waiting---- [100]
+100: (accelerate)
+100: -----waiting---- [105]
+105: (decelerate)
+105: (decelerate)
+105: (decelerate)
+105: -----waiting---- [110]
+110: (stop_car)
+
+Plan-Length:149
+Elapsed Time: 110
+Metric (Search):54.0
+Planning Time (msec): 226
+Heuristic Time (msec): 91
+Search Time (msec): 129
+Expanded Nodes:1899
+States Evaluated:2667
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:2250

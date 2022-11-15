@@ -1,0 +1,56 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_15_00_29_51/DOMAIN/P5_i4-100.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 11
+Aibr Preprocessing
+|F|:22
+|X|:10
+Aibr Preprocessing
+|A|:32
+|P|:41
+|E|:17
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=226.0
+f(n) = 904.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+f(n) = 905.0 (Expanded Nodes: 4, Evaluated States: 20, Time: 0.035) Frontier Size: 16
+f(n) = 921.0 (Expanded Nodes: 5, Evaluated States: 21, Time: 0.039) Frontier Size: 16
+f(n) = 925.0 (Expanded Nodes: 8, Evaluated States: 24, Time: 0.043) Frontier Size: 16
+f(n) = 929.0 (Expanded Nodes: 11, Evaluated States: 27, Time: 0.047) Frontier Size: 16
+f(n) = 933.0 (Expanded Nodes: 14, Evaluated States: 30, Time: 0.052) Frontier Size: 16
+f(n) = 1301.0 (Expanded Nodes: 17, Evaluated States: 33, Time: 0.058) Frontier Size: 16
+f(n) = 1401.0 (Expanded Nodes: 133, Evaluated States: 165, Time: 0.139) Frontier Size: 32
+f(n) = 1501.0 (Expanded Nodes: 249, Evaluated States: 297, Time: 0.195) Frontier Size: 48
+f(n) = 1601.0 (Expanded Nodes: 365, Evaluated States: 429, Time: 0.24) Frontier Size: 64
+f(n) = 1674.0 (Expanded Nodes: 481, Evaluated States: 561, Time: 0.284) Frontier Size: 80
+f(n) = 1701.0 (Expanded Nodes: 1409, Evaluated States: 1617, Time: 0.574) Frontier Size: 208
+f(n) = 1710.0 (Expanded Nodes: 1525, Evaluated States: 1749, Time: 0.613) Frontier Size: 224
+f(n) = 1730.0 (Expanded Nodes: 2453, Evaluated States: 2805, Time: 0.897) Frontier Size: 352
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L4 L5 ZAXES)
+0: -----waiting---- [200.0]
+200.0: (stop_movement_increase L4 L5 ZAXES)
+200.0: (start_movement_increase L2 L3 xyaxes)
+200.0: -----waiting---- [204.0]
+
+Plan-Length:216
+Elapsed Time: 204.0
+Metric (Search):207.0
+Planning Time (msec): 1065
+Heuristic Time (msec): 885
+Search Time (msec): 929
+Expanded Nodes:2559
+States Evaluated:2926
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:354

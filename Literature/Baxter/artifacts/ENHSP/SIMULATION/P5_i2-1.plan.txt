@@ -1,0 +1,55 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i2 -delta 1 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 11
+Aibr Preprocessing
+|F|:22
+|X|:8
+Aibr Preprocessing
+|A|:32
+|P|:40
+|E|:16
+Delta time heuristic model:1
+Delta time planning model:1
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=150.0
+f(n) = 600.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_movement_decrease L2 L3 ZAXES)
+0: -----waiting---- [1]
+1: (stop_movement_decrease L2 L3 ZAXES)
+1: (start_movement_increase L4 L5 xyaxes)
+1: -----waiting---- [3]
+3: (stop_movement_increase L4 L5 xyaxes)
+3: (start_movement_decrease L2 L3 ZAXES)
+3: -----waiting---- [5]
+5: (stop_movement_decrease L2 L3 ZAXES)
+5: (start_movement_increase L4 L5 xyaxes)
+5: -----waiting---- [8]
+8: (stop_movement_increase L4 L5 xyaxes)
+8: (start_movement_increase L4 L5 ZAXES)
+8: -----waiting---- [9]
+9: (stop_movement_increase L4 L5 ZAXES)
+9: (start_movement_increase L3 L4 xyaxes)
+9: -----waiting---- [10]
+
+Plan-Length:23
+Elapsed Time: 10
+Metric (Search):21.0
+Planning Time (msec): 844
+Heuristic Time (msec): 662
+Search Time (msec): 718
+Expanded Nodes:2269
+States Evaluated:10800
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:2304

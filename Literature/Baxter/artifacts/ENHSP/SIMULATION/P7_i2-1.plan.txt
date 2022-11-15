@@ -1,0 +1,73 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i2 -delta 1 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 13
+Aibr Preprocessing
+|F|:32
+|X|:12
+Aibr Preprocessing
+|A|:48
+|P|:84
+|E|:24
+Delta time heuristic model:1
+Delta time planning model:1
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=789.0
+f(n) = 3156.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.005) Frontier Size: 0
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L2 L3 ZAXES)
+0: -----waiting---- [7]
+7: (stop_movement_increase L2 L3 ZAXES)
+7: (start_movement_increase L4 L5 xyaxes)
+7: -----waiting---- [9]
+9: (stop_movement_increase L4 L5 xyaxes)
+9: (start_movement_increase L2 L3 ZAXES)
+9: -----waiting---- [10]
+10: (stop_movement_increase L2 L3 ZAXES)
+10: (start_movement_increase L4 L5 xyaxes)
+10: -----waiting---- [11]
+11: (stop_movement_increase L4 L5 xyaxes)
+11: (start_movement_increase L2 L3 ZAXES)
+11: -----waiting---- [12]
+12: (stop_movement_increase L2 L3 ZAXES)
+12: (start_movement_increase L4 L5 xyaxes)
+12: -----waiting---- [15]
+15: (stop_movement_increase L4 L5 xyaxes)
+15: (start_movement_increase L2 L3 ZAXES)
+15: -----waiting---- [16]
+16: (stop_movement_increase L2 L3 ZAXES)
+16: (start_movement_increase L4 L5 xyaxes)
+16: -----waiting---- [17]
+17: (stop_movement_increase L4 L5 xyaxes)
+17: (start_movement_increase L2 L3 ZAXES)
+17: -----waiting---- [18]
+18: (stop_movement_increase L2 L3 ZAXES)
+18: (start_movement_increase L4 L5 xyaxes)
+18: -----waiting---- [20]
+20: (stop_movement_increase L4 L5 xyaxes)
+20: (start_movement_decrease L5 L6 xyaxes)
+20: -----waiting---- [21]
+21: (stop_movement_decrease L5 L6 xyaxes)
+21: (start_movement_increase L3 L4 xyaxes)
+21: -----waiting---- [22]
+
+Plan-Length:45
+Elapsed Time: 22
+Metric (Search):45.0
+Planning Time (msec): 703
+Heuristic Time (msec): 530
+Search Time (msec): 566
+Expanded Nodes:651
+States Evaluated:4279
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:541

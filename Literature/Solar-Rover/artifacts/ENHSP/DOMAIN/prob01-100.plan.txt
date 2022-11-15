@@ -1,0 +1,46 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Solar-Rover/domain-delta.pddl --problem benchmarks/delta/Solar-Rover/delta-problems/2022_11_15_00_29_51/DOMAIN/prob01-100.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 7
+Aibr Preprocessing
+|F|:13
+|X|:7
+Aibr Preprocessing
+|A|:5
+|P|:5
+|E|:6
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=46.0
+f(n) = 184.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 217.0 (Expanded Nodes: 1, Evaluated States: 5, Time: 0.013) Frontier Size: 4
+f(n) = 493.0 (Expanded Nodes: 8, Evaluated States: 23, Time: 0.026) Frontier Size: 15
+f(n) = 630.0 (Expanded Nodes: 9, Evaluated States: 24, Time: 0.027) Frontier Size: 15
+f(n) = 1055.0 (Expanded Nodes: 12, Evaluated States: 27, Time: 0.03) Frontier Size: 15
+f(n) = 1198.0 (Expanded Nodes: 15, Evaluated States: 30, Time: 0.032) Frontier Size: 15
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (switchGenBatteryOn GB)
+0: -----waiting---- [100.0]
+100.0: (sendData)
+
+Plan-Length:105
+Elapsed Time: 100.0
+Metric (Search):102.0
+Planning Time (msec): 173
+Heuristic Time (msec): 45
+Search Time (msec): 59
+Expanded Nodes:116
+States Evaluated:134
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:17

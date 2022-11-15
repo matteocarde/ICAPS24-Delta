@@ -1,0 +1,64 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Solar-Rover/domain-delta.pddl --problem benchmarks/delta/Solar-Rover/delta-problems/2022_11_15_00_29_51/DOMAIN/prob05-100.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 6
+Aibr Preprocessing
+|F|:13
+|X|:7
+Aibr Preprocessing
+|A|:5
+|P|:5
+|E|:6
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=46.0
+f(n) = 184.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 217.0 (Expanded Nodes: 1, Evaluated States: 5, Time: 0.013) Frontier Size: 4
+f(n) = 493.0 (Expanded Nodes: 8, Evaluated States: 23, Time: 0.027) Frontier Size: 15
+f(n) = 630.0 (Expanded Nodes: 9, Evaluated States: 24, Time: 0.028) Frontier Size: 15
+f(n) = 876.0 (Expanded Nodes: 12, Evaluated States: 27, Time: 0.031) Frontier Size: 15
+f(n) = 927.0 (Expanded Nodes: 112, Evaluated States: 128, Time: 0.057) Frontier Size: 16
+f(n) = 976.0 (Expanded Nodes: 418, Evaluated States: 440, Time: 0.094) Frontier Size: 22
+f(n) = 977.0 (Expanded Nodes: 519, Evaluated States: 542, Time: 0.101) Frontier Size: 23
+f(n) = 978.0 (Expanded Nodes: 630, Evaluated States: 664, Time: 0.114) Frontier Size: 34
+f(n) = 1007.0 (Expanded Nodes: 942, Evaluated States: 985, Time: 0.144) Frontier Size: 43
+f(n) = 1027.0 (Expanded Nodes: 948, Evaluated States: 991, Time: 0.146) Frontier Size: 43
+f(n) = 1055.0 (Expanded Nodes: 1256, Evaluated States: 1305, Time: 0.173) Frontier Size: 49
+f(n) = 1064.0 (Expanded Nodes: 1259, Evaluated States: 1308, Time: 0.174) Frontier Size: 49
+f(n) = 1077.0 (Expanded Nodes: 1260, Evaluated States: 1309, Time: 0.174) Frontier Size: 49
+f(n) = 1078.0 (Expanded Nodes: 1371, Evaluated States: 1431, Time: 0.186) Frontier Size: 60
+f(n) = 1107.0 (Expanded Nodes: 1683, Evaluated States: 1752, Time: 0.208) Frontier Size: 69
+f(n) = 1155.0 (Expanded Nodes: 1689, Evaluated States: 1758, Time: 0.209) Frontier Size: 69
+f(n) = 1224.0 (Expanded Nodes: 1692, Evaluated States: 1761, Time: 0.21) Frontier Size: 69
+f(n) = 1255.0 (Expanded Nodes: 1693, Evaluated States: 1762, Time: 0.21) Frontier Size: 69
+f(n) = 1264.0 (Expanded Nodes: 1696, Evaluated States: 1765, Time: 0.21) Frontier Size: 69
+f(n) = 1286.0 (Expanded Nodes: 1698, Evaluated States: 1767, Time: 0.211) Frontier Size: 69
+f(n) = 1386.0 (Expanded Nodes: 1797, Evaluated States: 1865, Time: 0.219) Frontier Size: 68
+f(n) = 1398.0 (Expanded Nodes: 1896, Evaluated States: 1963, Time: 0.227) Frontier Size: 67
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: -----waiting---- [200.0]
+200.0: (switchGenBatteryOn GB)
+200.0: -----waiting---- [300.0]
+300.0: (sendData)
+
+Plan-Length:307
+Elapsed Time: 300.0
+Metric (Search):302.0
+Planning Time (msec): 341
+Heuristic Time (msec): 208
+Search Time (msec): 233
+Expanded Nodes:1997
+States Evaluated:2067
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:127

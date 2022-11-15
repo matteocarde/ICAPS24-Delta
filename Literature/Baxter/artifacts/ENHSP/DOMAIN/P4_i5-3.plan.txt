@@ -1,0 +1,44 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_15_00_29_51/DOMAIN/P4_i5-3.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 11
+Aibr Preprocessing
+|F|:17
+|X|:8
+Aibr Preprocessing
+|A|:24
+|P|:25
+|E|:13
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=256.0
+f(n) = 1024.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+f(n) = 1033.0 (Expanded Nodes: 1, Evaluated States: 13, Time: 0.021) Frontier Size: 12
+f(n) = 1036.0 (Expanded Nodes: 4, Evaluated States: 28, Time: 0.029) Frontier Size: 24
+f(n) = 1039.0 (Expanded Nodes: 7, Evaluated States: 43, Time: 0.035) Frontier Size: 36
+f(n) = 1041.0 (Expanded Nodes: 10, Evaluated States: 58, Time: 0.04) Frontier Size: 48
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L2 L3 xyaxes)
+0: -----waiting---- [10.0]
+
+Plan-Length:16
+Elapsed Time: 10.0
+Metric (Search):11.0
+Planning Time (msec): 172
+Heuristic Time (msec): 33
+Search Time (msec): 44
+Expanded Nodes:23
+States Evaluated:73
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:3

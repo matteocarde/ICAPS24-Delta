@@ -1,0 +1,63 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P6_i5 -delta 3 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 11
+Aibr Preprocessing
+|F|:27
+|X|:10
+Aibr Preprocessing
+|A|:40
+|P|:60
+|E|:20
+Delta time heuristic model:3
+Delta time planning model:3
+Delta time search-execution model:3
+Delta time validation model:3
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=208.0
+f(n) = 832.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+f(n) = 841.0 (Expanded Nodes: 1, Evaluated States: 20, Time: 0.026) Frontier Size: 19
+f(n) = 842.0 (Expanded Nodes: 5, Evaluated States: 24, Time: 0.029) Frontier Size: 19
+f(n) = 843.0 (Expanded Nodes: 33, Evaluated States: 261, Time: 0.094) Frontier Size: 228
+f(n) = 844.0 (Expanded Nodes: 41, Evaluated States: 345, Time: 0.108) Frontier Size: 304
+f(n) = 845.0 (Expanded Nodes: 93, Evaluated States: 571, Time: 0.143) Frontier Size: 478
+f(n) = 846.0 (Expanded Nodes: 156, Evaluated States: 780, Time: 0.172) Frontier Size: 624
+f(n) = 847.0 (Expanded Nodes: 302, Evaluated States: 1759, Time: 0.276) Frontier Size: 1456
+f(n) = 848.0 (Expanded Nodes: 559, Evaluated States: 3101, Time: 0.403) Frontier Size: 2539
+f(n) = 849.0 (Expanded Nodes: 851, Evaluated States: 4333, Time: 0.522) Frontier Size: 3478
+-------------Time: 10s ; Expanded Nodes: 19578 (Avg-Speed 1957.0 n/s); Evaluated States: 106338
+-------------Time: 20s ; Expanded Nodes: 40276 (Avg-Speed 2013.0 n/s); Evaluated States: 215964
+Extracting plan with execution delta: 3
+Problem Solved
+
+Found Plan:
+0: (start_movement_increase L3 L4 xyaxes)
+0: -----waiting---- [6]
+6: (stop_movement_increase L3 L4 xyaxes)
+6: (start_movement_increase L3 L4 ZAXES)
+6: -----waiting---- [18]
+18: (stop_movement_increase L3 L4 ZAXES)
+18: (start_movement_increase L5 L6 xyaxes)
+18: -----waiting---- [21]
+21: (stop_movement_increase L5 L6 xyaxes)
+21: (start_movement_decrease L2 L3 xyaxes)
+21: -----waiting---- [33]
+33: (stop_movement_decrease L2 L3 xyaxes)
+33: (start_movement_increase L4 L5 ZAXES)
+33: -----waiting---- [42]
+
+Plan-Length:25
+Elapsed Time: 42
+Metric (Search):23.0
+Planning Time (msec): 26761
+Heuristic Time (msec): 25927
+Search Time (msec): 26633
+Expanded Nodes:54603
+States Evaluated:288769
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:58575

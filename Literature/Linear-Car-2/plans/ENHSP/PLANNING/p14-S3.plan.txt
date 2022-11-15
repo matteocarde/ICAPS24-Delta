@@ -1,0 +1,61 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Linear-Car-2/domain.pddl --problem benchmarks/delta/Linear-Car-2/p14.pddl -de 1 -dp 3 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 6
+Aibr Preprocessing
+|F|:2
+|X|:3
+Aibr Preprocessing
+|A|:4
+|P|:2
+|E|:1
+Delta time heuristic model:1.0
+Delta time planning model:3
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=153.0
+f(n) = 612.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_car)
+0: (accelerate)
+0: -----waiting---- [3]
+3: (accelerate)
+3: -----waiting---- [30]
+30: (decelerate)
+30: -----waiting---- [33]
+33: (decelerate)
+33: (decelerate)
+33: -----waiting---- [36]
+36: (decelerate)
+36: -----waiting---- [60]
+60: (accelerate)
+60: -----waiting---- [66]
+66: (decelerate)
+66: -----waiting---- [69]
+69: (accelerate)
+69: -----waiting---- [72]
+72: (decelerate)
+72: (decelerate)
+72: (decelerate)
+72: -----waiting---- [75]
+75: (stop_car)
+
+Plan-Length:91
+Elapsed Time: 75
+Metric (Search):39.0
+Planning Time (msec): 295
+Heuristic Time (msec): 141
+Search Time (msec): 193
+Expanded Nodes:3649
+States Evaluated:5714
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:3863

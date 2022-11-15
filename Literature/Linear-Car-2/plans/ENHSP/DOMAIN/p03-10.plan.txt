@@ -1,0 +1,89 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Linear-Car-2/domain-delta.pddl --problem benchmarks/delta/Linear-Car-2/delta-problems/2022_11_15_00_29_51/DOMAIN/p03-10.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 6
+Aibr Preprocessing
+|F|:2
+|X|:5
+Aibr Preprocessing
+|A|:4
+|P|:3
+|E|:2
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=161.0
+f(n) = 644.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_car)
+0: (accelerate)
+0: (accelerate)
+0: (accelerate)
+0: -----waiting---- [10.0]
+10.0: (decelerate)
+10.0: (decelerate)
+10.0: (decelerate)
+10.0: (decelerate)
+10.0: -----waiting---- [20.0]
+20.0: (accelerate)
+20.0: -----waiting---- [30.0]
+30.0: (decelerate)
+30.0: (decelerate)
+30.0: (decelerate)
+30.0: -----waiting---- [40.0]
+40.0: (accelerate)
+40.0: -----waiting---- [50.0]
+50.0: (decelerate)
+50.0: (decelerate)
+50.0: (decelerate)
+50.0: -----waiting---- [60.0]
+60.0: (accelerate)
+60.0: -----waiting---- [70.0]
+70.0: (decelerate)
+70.0: (decelerate)
+70.0: (decelerate)
+70.0: (decelerate)
+70.0: -----waiting---- [80.0]
+80.0: (accelerate)
+80.0: -----waiting---- [90.0]
+90.0: (decelerate)
+90.0: (decelerate)
+90.0: (decelerate)
+90.0: (decelerate)
+90.0: -----waiting---- [100.0]
+100.0: (accelerate)
+100.0: -----waiting---- [110.0]
+110.0: (decelerate)
+110.0: (decelerate)
+110.0: (decelerate)
+110.0: (decelerate)
+110.0: -----waiting---- [120.0]
+120.0: (accelerate)
+120.0: -----waiting---- [130.0]
+130.0: (decelerate)
+130.0: (decelerate)
+130.0: (decelerate)
+130.0: (decelerate)
+130.0: -----waiting---- [140.0]
+140.0: (stop_car)
+
+Plan-Length:197
+Elapsed Time: 140.0
+Metric (Search):177.0
+Planning Time (msec): 5958
+Heuristic Time (msec): 5316
+Search Time (msec): 5853
+Expanded Nodes:236070
+States Evaluated:268709
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:73461

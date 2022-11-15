@@ -1,0 +1,203 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/HVAC/domain.pddl --problem benchmarks/delta/HVAC/instance_1_19.pddl -de 1 -dp 1 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 21
+Aibr Preprocessing
+|F|:19
+|X|:4
+Aibr Preprocessing
+|A|:23
+|P|:2
+|E|:0
+Delta time heuristic model:1.0
+Delta time planning model:1
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=2851.0
+f(n) = 11404.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.01) Frontier Size: 0
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: -----waiting---- [9]
+9: (increase_air_flow r1)
+9: (increase_air_flow r1)
+9: (increase_air_flow r1)
+9: (increase_air_flow r1)
+9: (increase_temp r1)
+9: (increase_temp r1)
+9: (increase_temp r1)
+9: (increase_temp r1)
+9: (increase_temp r1)
+9: (increase_temp r1)
+9: -----waiting---- [10]
+10: (increase_temp r1)
+10: (satisfier r1 k1)
+10: -----waiting---- [11]
+11: (decrease_temp r1)
+11: (decrease_temp r1)
+11: -----waiting---- [12]
+12: (decrease_air_flow r1)
+12: (decrease_air_flow r1)
+12: (decrease_air_flow r1)
+12: -----waiting---- [20]
+20: (satisfier r1 k2)
+20: -----waiting---- [29]
+29: (decrease_temp r1)
+29: (increase_air_flow r1)
+29: (increase_air_flow r1)
+29: (increase_air_flow r1)
+29: (increase_temp r1)
+29: (increase_temp r1)
+29: -----waiting---- [30]
+30: (increase_temp r1)
+30: (satisfier r1 k3)
+30: -----waiting---- [31]
+31: (decrease_temp r1)
+31: (decrease_temp r1)
+31: -----waiting---- [32]
+32: (decrease_air_flow r1)
+32: (decrease_air_flow r1)
+32: (decrease_air_flow r1)
+32: -----waiting---- [40]
+40: (satisfier r1 k4)
+40: -----waiting---- [49]
+49: (increase_air_flow r1)
+49: (increase_air_flow r1)
+49: (increase_air_flow r1)
+49: (increase_temp r1)
+49: -----waiting---- [50]
+50: (increase_temp r1)
+50: (satisfier r1 k5)
+50: -----waiting---- [51]
+51: (decrease_temp r1)
+51: (decrease_temp r1)
+51: -----waiting---- [52]
+52: (decrease_air_flow r1)
+52: (decrease_air_flow r1)
+52: (decrease_air_flow r1)
+52: -----waiting---- [60]
+60: (satisfier r1 k6)
+60: -----waiting---- [69]
+69: (decrease_temp r1)
+69: (increase_air_flow r1)
+69: (increase_air_flow r1)
+69: (increase_air_flow r1)
+69: (increase_temp r1)
+69: (increase_temp r1)
+69: -----waiting---- [70]
+70: (increase_temp r1)
+70: (satisfier r1 k7)
+70: -----waiting---- [71]
+71: (decrease_temp r1)
+71: (decrease_temp r1)
+71: -----waiting---- [72]
+72: (decrease_air_flow r1)
+72: (decrease_air_flow r1)
+72: (decrease_air_flow r1)
+72: -----waiting---- [80]
+80: (satisfier r1 k8)
+80: -----waiting---- [89]
+89: (increase_air_flow r1)
+89: (increase_air_flow r1)
+89: (increase_air_flow r1)
+89: (increase_temp r1)
+89: -----waiting---- [90]
+90: (increase_temp r1)
+90: (satisfier r1 k9)
+90: -----waiting---- [91]
+91: (decrease_temp r1)
+91: (decrease_temp r1)
+91: -----waiting---- [92]
+92: (decrease_air_flow r1)
+92: (decrease_air_flow r1)
+92: (decrease_air_flow r1)
+92: -----waiting---- [100]
+100: (satisfier r1 k10)
+100: -----waiting---- [109]
+109: (increase_air_flow r1)
+109: (increase_air_flow r1)
+109: (increase_air_flow r1)
+109: (increase_temp r1)
+109: -----waiting---- [110]
+110: (increase_temp r1)
+110: (satisfier r1 k11)
+110: -----waiting---- [111]
+111: (decrease_temp r1)
+111: (decrease_temp r1)
+111: -----waiting---- [112]
+112: (decrease_air_flow r1)
+112: (decrease_air_flow r1)
+112: (decrease_air_flow r1)
+112: -----waiting---- [120]
+120: (satisfier r1 k12)
+120: -----waiting---- [129]
+129: (increase_air_flow r1)
+129: (increase_air_flow r1)
+129: (increase_air_flow r1)
+129: (increase_temp r1)
+129: -----waiting---- [130]
+130: (increase_temp r1)
+130: (satisfier r1 k13)
+130: -----waiting---- [131]
+131: (decrease_temp r1)
+131: (decrease_temp r1)
+131: -----waiting---- [132]
+132: (decrease_air_flow r1)
+132: (decrease_air_flow r1)
+132: (decrease_air_flow r1)
+132: -----waiting---- [140]
+140: (satisfier r1 k14)
+140: -----waiting---- [149]
+149: (increase_air_flow r1)
+149: (increase_air_flow r1)
+149: (increase_air_flow r1)
+149: (increase_temp r1)
+149: -----waiting---- [150]
+150: (increase_temp r1)
+150: (satisfier r1 k15)
+150: -----waiting---- [151]
+151: (decrease_temp r1)
+151: (decrease_temp r1)
+151: -----waiting---- [152]
+152: (decrease_air_flow r1)
+152: (decrease_air_flow r1)
+152: (decrease_air_flow r1)
+152: -----waiting---- [160]
+160: (satisfier r1 k16)
+160: -----waiting---- [170]
+170: (satisfier r1 k17)
+170: -----waiting---- [179]
+179: (increase_air_flow r1)
+179: (increase_air_flow r1)
+179: (increase_air_flow r1)
+179: (increase_temp r1)
+179: -----waiting---- [180]
+180: (increase_temp r1)
+180: (satisfier r1 k18)
+180: -----waiting---- [181]
+181: (decrease_temp r1)
+181: (decrease_temp r1)
+181: -----waiting---- [182]
+182: (decrease_air_flow r1)
+182: (decrease_air_flow r1)
+182: (decrease_air_flow r1)
+182: -----waiting---- [190]
+190: (satisfier r1 k19)
+
+Plan-Length:309
+Elapsed Time: 190
+Metric (Search):309.0
+Planning Time (msec): 6897
+Heuristic Time (msec): 6657
+Search Time (msec): 6753
+Expanded Nodes:8764
+States Evaluated:16213
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:5011
+Number of Duplicates detected:19908

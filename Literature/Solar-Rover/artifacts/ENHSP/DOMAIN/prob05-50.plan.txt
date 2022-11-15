@@ -1,0 +1,54 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Solar-Rover/domain-delta.pddl --problem benchmarks/delta/Solar-Rover/delta-problems/2022_11_15_00_29_51/DOMAIN/prob05-50.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 7
+Aibr Preprocessing
+|F|:13
+|X|:7
+Aibr Preprocessing
+|A|:5
+|P|:5
+|E|:6
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=46.0
+f(n) = 184.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+f(n) = 217.0 (Expanded Nodes: 1, Evaluated States: 5, Time: 0.013) Frontier Size: 4
+f(n) = 476.0 (Expanded Nodes: 8, Evaluated States: 23, Time: 0.024) Frontier Size: 15
+f(n) = 493.0 (Expanded Nodes: 58, Evaluated States: 74, Time: 0.038) Frontier Size: 16
+f(n) = 526.0 (Expanded Nodes: 59, Evaluated States: 75, Time: 0.039) Frontier Size: 16
+f(n) = 527.0 (Expanded Nodes: 109, Evaluated States: 126, Time: 0.049) Frontier Size: 17
+f(n) = 576.0 (Expanded Nodes: 262, Evaluated States: 285, Time: 0.073) Frontier Size: 23
+f(n) = 577.0 (Expanded Nodes: 312, Evaluated States: 336, Time: 0.076) Frontier Size: 24
+f(n) = 578.0 (Expanded Nodes: 523, Evaluated States: 564, Time: 0.093) Frontier Size: 41
+f(n) = 604.0 (Expanded Nodes: 682, Evaluated States: 732, Time: 0.102) Frontier Size: 50
+f(n) = 626.0 (Expanded Nodes: 685, Evaluated States: 735, Time: 0.102) Frontier Size: 50
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_useBattery b1)
+0: (start_useBattery b2)
+0: (start_useBattery b3)
+0: -----waiting---- [250.0]
+250.0: (switchGenBatteryOn GB)
+250.0: (sendData)
+
+Plan-Length:265
+Elapsed Time: 250.0
+Metric (Search):255.0
+Planning Time (msec): 217
+Heuristic Time (msec): 89
+Search Time (msec): 108
+Expanded Nodes:787
+States Evaluated:839
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:47

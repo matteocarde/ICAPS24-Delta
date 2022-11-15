@@ -1,0 +1,62 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/HVAC/domain.pddl --problem benchmarks/delta/HVAC/instance_1_2.pddl -de 1 -dp 10 -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 8
+Aibr Preprocessing
+|F|:2
+|X|:4
+Aibr Preprocessing
+|A|:6
+|P|:2
+|E|:0
+Delta time heuristic model:1.0
+Delta time planning model:10
+Delta time search-execution model:1
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=129.0
+f(n) = 516.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+f(n) = 517.0 (Expanded Nodes: 106, Evaluated States: 190, Time: 0.039) Frontier Size: 1
+f(n) = 518.0 (Expanded Nodes: 213, Evaluated States: 386, Time: 0.052) Frontier Size: 2
+f(n) = 519.0 (Expanded Nodes: 321, Evaluated States: 579, Time: 0.066) Frontier Size: 3
+f(n) = 520.0 (Expanded Nodes: 434, Evaluated States: 781, Time: 0.077) Frontier Size: 6
+f(n) = 521.0 (Expanded Nodes: 545, Evaluated States: 978, Time: 0.085) Frontier Size: 7
+f(n) = 522.0 (Expanded Nodes: 657, Evaluated States: 1179, Time: 0.091) Frontier Size: 8
+f(n) = 523.0 (Expanded Nodes: 663, Evaluated States: 1186, Time: 0.091) Frontier Size: 9
+f(n) = 524.0 (Expanded Nodes: 777, Evaluated States: 1386, Time: 0.097) Frontier Size: 8
+f(n) = 525.0 (Expanded Nodes: 890, Evaluated States: 1586, Time: 0.102) Frontier Size: 9
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_air_flow r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: -----waiting---- [10]
+10: (decrease_temp r1)
+10: (decrease_temp r1)
+10: (satisfier r1 k1)
+10: -----waiting---- [20]
+20: (satisfier r1 k2)
+
+Plan-Length:33
+Elapsed Time: 20
+Metric (Search):15.0
+Planning Time (msec): 229
+Heuristic Time (msec): 80
+Search Time (msec): 114
+Expanded Nodes:1265
+States Evaluated:2287
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:754
+Number of Duplicates detected:2931

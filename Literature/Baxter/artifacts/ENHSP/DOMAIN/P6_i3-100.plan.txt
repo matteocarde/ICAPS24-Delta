@@ -1,0 +1,52 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_15_00_29_51/DOMAIN/P6_i3-100.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 13
+Aibr Preprocessing
+|F|:27
+|X|:12
+Aibr Preprocessing
+|A|:40
+|P|:61
+|E|:21
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=398.0
+f(n) = 1592.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.004) Frontier Size: 0
+f(n) = 1597.0 (Expanded Nodes: 10483, Evaluated States: 10972, Time: 1.814) Frontier Size: 489
+f(n) = 1601.0 (Expanded Nodes: 10485, Evaluated States: 10974, Time: 1.815) Frontier Size: 489
+f(n) = 1602.0 (Expanded Nodes: 10600, Evaluated States: 11089, Time: 1.829) Frontier Size: 489
+f(n) = 1603.0 (Expanded Nodes: 10601, Evaluated States: 11090, Time: 1.829) Frontier Size: 489
+f(n) = 1609.0 (Expanded Nodes: 10603, Evaluated States: 11092, Time: 1.829) Frontier Size: 489
+f(n) = 1613.0 (Expanded Nodes: 10607, Evaluated States: 11096, Time: 1.832) Frontier Size: 489
+f(n) = 1617.0 (Expanded Nodes: 10611, Evaluated States: 11100, Time: 1.835) Frontier Size: 489
+f(n) = 1619.0 (Expanded Nodes: 10614, Evaluated States: 11103, Time: 1.837) Frontier Size: 489
+f(n) = 1621.0 (Expanded Nodes: 11614, Evaluated States: 12143, Time: 2.015) Frontier Size: 529
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_movement_decrease L2 L3 ZAXES)
+0: -----waiting---- [100.0]
+100.0: (stop_movement_decrease L2 L3 ZAXES)
+100.0: (start_movement_decrease L4 L5 ZAXES)
+100.0: -----waiting---- [109.0]
+
+Plan-Length:125
+Elapsed Time: 109.0
+Metric (Search):112.0
+Planning Time (msec): 2184
+Heuristic Time (msec): 1962
+Search Time (msec): 2042
+Expanded Nodes:11825
+States Evaluated:12373
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:551

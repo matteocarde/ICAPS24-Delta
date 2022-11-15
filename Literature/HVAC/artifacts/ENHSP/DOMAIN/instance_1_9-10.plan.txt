@@ -1,0 +1,90 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/HVAC/domain-delta.pddl --problem benchmarks/delta/HVAC/delta-problems/2022_11_15_00_29_51/DOMAIN/instance_1_9-10.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 12
+Aibr Preprocessing
+|F|:9
+|X|:6
+Aibr Preprocessing
+|A|:13
+|P|:3
+|E|:1
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=1085.0
+f(n) = 4340.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.006) Frontier Size: 0
+f(n) = 4341.0 (Expanded Nodes: 115, Evaluated States: 198, Time: 0.094) Frontier Size: 1
+f(n) = 4342.0 (Expanded Nodes: 240, Evaluated States: 412, Time: 0.137) Frontier Size: 2
+f(n) = 4343.0 (Expanded Nodes: 366, Evaluated States: 623, Time: 0.176) Frontier Size: 3
+f(n) = 4344.0 (Expanded Nodes: 497, Evaluated States: 843, Time: 0.206) Frontier Size: 6
+f(n) = 4345.0 (Expanded Nodes: 627, Evaluated States: 1058, Time: 0.235) Frontier Size: 7
+f(n) = 4346.0 (Expanded Nodes: 775, Evaluated States: 1295, Time: 0.268) Frontier Size: 8
+f(n) = 4347.0 (Expanded Nodes: 808, Evaluated States: 1329, Time: 0.275) Frontier Size: 9
+f(n) = 4348.0 (Expanded Nodes: 949, Evaluated States: 1556, Time: 0.305) Frontier Size: 9
+f(n) = 4349.0 (Expanded Nodes: 1097, Evaluated States: 1789, Time: 0.337) Frontier Size: 9
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: (increase_air_flow r1)
+0: (increase_temp r1)
+0: (increase_temp r1)
+0: -----waiting---- [10.0]
+10.0: (decrease_temp r1)
+10.0: (decrease_temp r1)
+10.0: (satisfier r1 k1)
+10.0: -----waiting---- [20.0]
+20.0: (increase_temp r1)
+20.0: (increase_temp r1)
+20.0: (satisfier r1 k2)
+20.0: -----waiting---- [30.0]
+30.0: (decrease_temp r1)
+30.0: (decrease_temp r1)
+30.0: (satisfier r1 k3)
+30.0: -----waiting---- [40.0]
+40.0: (increase_temp r1)
+40.0: (increase_temp r1)
+40.0: (satisfier r1 k4)
+40.0: -----waiting---- [50.0]
+50.0: (decrease_temp r1)
+50.0: (decrease_temp r1)
+50.0: (satisfier r1 k5)
+50.0: -----waiting---- [60.0]
+60.0: (increase_temp r1)
+60.0: (increase_temp r1)
+60.0: (satisfier r1 k6)
+60.0: -----waiting---- [70.0]
+70.0: (decrease_temp r1)
+70.0: (decrease_temp r1)
+70.0: (satisfier r1 k7)
+70.0: -----waiting---- [80.0]
+80.0: (increase_temp r1)
+80.0: (increase_temp r1)
+80.0: (satisfier r1 k8)
+80.0: -----waiting---- [90.0]
+90.0: (satisfier r1 k9)
+
+Plan-Length:133
+Elapsed Time: 90.0
+Metric (Search):124.0
+Planning Time (msec): 1056
+Heuristic Time (msec): 884
+Search Time (msec): 936
+Expanded Nodes:4875
+States Evaluated:8172
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:2376
+Number of Duplicates detected:9283

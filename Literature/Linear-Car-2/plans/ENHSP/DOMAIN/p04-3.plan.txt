@@ -1,0 +1,66 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Linear-Car-2/domain-delta.pddl --problem benchmarks/delta/Linear-Car-2/delta-problems/2022_11_15_00_29_51/DOMAIN/p04-3.pddl -h aibr -s WAStar -wh 4
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 7
+Aibr Preprocessing
+|F|:2
+|X|:5
+Aibr Preprocessing
+|A|:4
+|P|:3
+|E|:2
+Delta time heuristic model:1.0
+Delta time planning model:1.0
+Delta time search-execution model:1.0
+Delta time validation model:1
+AIBR selected
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=161.0
+f(n) = 644.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+Extracting plan with execution delta: 1.0
+Problem Solved
+
+Found Plan:
+0: (start_car)
+0: (accelerate)
+0: (accelerate)
+0: (accelerate)
+0: -----waiting---- [3.0]
+3.0: (accelerate)
+3.0: -----waiting---- [9.0]
+9.0: (decelerate)
+9.0: (decelerate)
+9.0: -----waiting---- [12.0]
+12.0: (decelerate)
+12.0: -----waiting---- [15.0]
+15.0: (decelerate)
+15.0: -----waiting---- [18.0]
+18.0: (decelerate)
+18.0: -----waiting---- [21.0]
+21.0: (decelerate)
+21.0: -----waiting---- [39.0]
+39.0: (decelerate)
+39.0: (decelerate)
+39.0: -----waiting---- [42.0]
+42.0: (accelerate)
+42.0: -----waiting---- [45.0]
+45.0: (decelerate)
+45.0: (decelerate)
+45.0: (decelerate)
+45.0: -----waiting---- [48.0]
+48.0: (stop_car)
+
+Plan-Length:84
+Elapsed Time: 48.0
+Metric (Search):66.0
+Planning Time (msec): 175
+Heuristic Time (msec): 49
+Search Time (msec): 70
+Expanded Nodes:621
+States Evaluated:826
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:482
