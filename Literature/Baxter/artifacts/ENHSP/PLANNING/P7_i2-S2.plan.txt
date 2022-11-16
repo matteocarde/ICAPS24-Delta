@@ -1,8 +1,9 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i2 -de 1 -dp 2 -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i2 -de 1 -dp 2 -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
-Grounding Time: 13
+Grounding Time: 15
 Aibr Preprocessing
 |F|:32
 |X|:12
@@ -14,48 +15,31 @@ Delta time heuristic model:1.0
 Delta time planning model:2
 Delta time search-execution model:1
 Delta time validation model:1
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=789.0
-f(n) = 3156.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.006) Frontier Size: 0
-Extracting plan with execution delta: 1
-Problem Solved
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 24, Time: 0.009) Frontier Size: 23
+f(n) = 6.0 (Expanded Nodes: 25, Evaluated States: 48, Time: 0.012) Frontier Size: 23
+f(n) = 7.0 (Expanded Nodes: 49, Evaluated States: 96, Time: 0.013) Frontier Size: 47
+f(n) = 8.0 (Expanded Nodes: 97, Evaluated States: 696, Time: 0.018) Frontier Size: 599
+f(n) = 9.0 (Expanded Nodes: 697, Evaluated States: 1824, Time: 0.034) Frontier Size: 1127
+f(n) = 10.0 (Expanded Nodes: 1825, Evaluated States: 3744, Time: 0.051) Frontier Size: 1919
+f(n) = 11.0 (Expanded Nodes: 3745, Evaluated States: 12271, Time: 0.087) Frontier Size: 8526
+f(n) = 12.0 (Expanded Nodes: 12272, Evaluated States: 32703, Time: 0.224) Frontier Size: 20431
+f(n) = 13.0 (Expanded Nodes: 32704, Evaluated States: 72672, Time: 0.425) Frontier Size: 39968
+f(n) = 14.0 (Expanded Nodes: 72673, Evaluated States: 176239, Time: 0.688) Frontier Size: 103566
+f(n) = 15.0 (Expanded Nodes: 176240, Evaluated States: 421707, Time: 1.441) Frontier Size: 245467
+f(n) = 16.0 (Expanded Nodes: 421708, Evaluated States: 935583, Time: 3.152) Frontier Size: 513875
+f(n) = 17.0 (Expanded Nodes: 935584, Evaluated States: 2051069, Time: 6.824) Frontier Size: 1115485
+-------------Time: 10s ; Expanded Nodes: 1323570 (Avg-Speed 132357.0 n/s); Evaluated States: 3145742
+f(n) = 18.0 (Expanded Nodes: 2051070, Evaluated States: 4461586, Time: 15.068) Frontier Size: 2410516
+-------------Time: 22s ; Expanded Nodes: 2793505 (Avg-Speed 126977.0 n/s); Evaluated States: 6291466
+-------------Time: 32s ; Expanded Nodes: 4446347 (Avg-Speed 138948.0 n/s); Evaluated States: 9426390
+f(n) = 19.0 (Expanded Nodes: 4461587, Evaluated States: 9441132, Time: 32.395) Frontier Size: 4979545
+-------------Time: 44s ; Expanded Nodes: 5457352 (Avg-Speed 124030.0 n/s); Evaluated States: 12582931
+-------------Time: 54s ; Expanded Nodes: 6999415 (Avg-Speed 129618.0 n/s); Evaluated States: 15927514
 
-Found Plan:
-0: (start_movement_increase L2 L3 ZAXES)
-0: -----waiting---- [8]
-8: (stop_movement_increase L2 L3 ZAXES)
-8: (start_movement_increase L4 L5 xyaxes)
-8: -----waiting---- [12]
-12: (stop_movement_increase L4 L5 xyaxes)
-12: (start_movement_increase L2 L3 ZAXES)
-12: -----waiting---- [14]
-14: (stop_movement_increase L2 L3 ZAXES)
-14: (start_movement_increase L4 L5 xyaxes)
-14: -----waiting---- [18]
-18: (stop_movement_increase L4 L5 xyaxes)
-18: (start_movement_increase L2 L3 ZAXES)
-18: -----waiting---- [20]
-20: (stop_movement_increase L2 L3 ZAXES)
-20: (start_movement_increase L6 L7 xyaxes)
-20: -----waiting---- [22]
-22: (stop_movement_increase L6 L7 xyaxes)
-22: (start_movement_decrease L5 L6 xyaxes)
-22: -----waiting---- [24]
-24: (stop_movement_decrease L5 L6 xyaxes)
-24: (start_movement_increase L4 L5 xyaxes)
-24: -----waiting---- [26]
-
-Plan-Length:41
-Elapsed Time: 26
-Metric (Search):28.0
-Planning Time (msec): 495
-Heuristic Time (msec): 317
-Search Time (msec): 360
-Expanded Nodes:709
-States Evaluated:2646
-Fixed constraint violations during search (zero-crossing):0
-Number of Dead-Ends detected:0
-Number of Duplicates detected:684
+STDERR

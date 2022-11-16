@@ -1,8 +1,9 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_15_00_29_51/DOMAIN/P5_i3-3.pddl -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_16_10_18_15/DOMAIN/P5_i3-3.pddl -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
-Grounding Time: 11
+Grounding Time: 13
 Aibr Preprocessing
 |F|:22
 |X|:10
@@ -14,27 +15,36 @@ Delta time heuristic model:1.0
 Delta time planning model:1.0
 Delta time search-execution model:1.0
 Delta time validation model:1
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=192.0
-f(n) = 768.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 17, Time: 0.009) Frontier Size: 16
+f(n) = 6.0 (Expanded Nodes: 18, Evaluated States: 34, Time: 0.012) Frontier Size: 16
+f(n) = 7.0 (Expanded Nodes: 35, Evaluated States: 51, Time: 0.013) Frontier Size: 16
+f(n) = 8.0 (Expanded Nodes: 52, Evaluated States: 84, Time: 0.014) Frontier Size: 32
+f(n) = 9.0 (Expanded Nodes: 85, Evaluated States: 133, Time: 0.015) Frontier Size: 48
+f(n) = 10.0 (Expanded Nodes: 134, Evaluated States: 422, Time: 0.018) Frontier Size: 288
+f(n) = 11.0 (Expanded Nodes: 423, Evaluated States: 727, Time: 0.025) Frontier Size: 304
 Extracting plan with execution delta: 1.0
 Problem Solved
 
 Found Plan:
-0: (start_movement_decrease L3 L4 xyaxes)
+0: (start_movement_decrease L1 L2 xyaxes)
 0: -----waiting---- [7.0]
 
 Plan-Length:11
 Elapsed Time: 7.0
 Metric (Search):8.0
-Planning Time (msec): 154
-Heuristic Time (msec): 15
-Search Time (msec): 27
-Expanded Nodes:9
-States Evaluated:26
+Planning Time (msec): 176
+Heuristic Time (msec): 1
+Search Time (msec): 26
+Expanded Nodes:506
+States Evaluated:815
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:1
+Number of Duplicates detected:293
+
+STDERR

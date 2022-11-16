@@ -1,4 +1,5 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P6_i1 -delta 5 -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P6_i1 -delta 5 -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
@@ -14,13 +15,14 @@ Delta time heuristic model:5
 Delta time planning model:5
 Delta time search-execution model:5
 Delta time validation model:5
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=47.0
-f(n) = 188.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
-f(n) = 197.0 (Expanded Nodes: 1, Evaluated States: 20, Time: 0.022) Frontier Size: 19
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.0) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 20, Time: 0.008) Frontier Size: 19
+f(n) = 6.0 (Expanded Nodes: 21, Evaluated States: 40, Time: 0.01) Frontier Size: 19
 Extracting plan with execution delta: 5
 Problem Solved
 
@@ -31,11 +33,13 @@ Found Plan:
 Plan-Length:3
 Elapsed Time: 10
 Metric (Search):3.0
-Planning Time (msec): 159
-Heuristic Time (msec): 14
-Search Time (msec): 24
-Expanded Nodes:7
-States Evaluated:26
+Planning Time (msec): 137
+Heuristic Time (msec): 0
+Search Time (msec): 11
+Expanded Nodes:29
+States Evaluated:54
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:4
+Number of Duplicates detected:20
+
+STDERR

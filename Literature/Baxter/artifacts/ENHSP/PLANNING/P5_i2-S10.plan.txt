@@ -1,8 +1,9 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i2 -de 1 -dp 10 -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i2 -de 1 -dp 10 -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
-Grounding Time: 11
+Grounding Time: 10
 Aibr Preprocessing
 |F|:22
 |X|:8
@@ -14,33 +15,36 @@ Delta time heuristic model:1.0
 Delta time planning model:10
 Delta time search-execution model:1
 Delta time validation model:1
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=150.0
-f(n) = 600.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.002) Frontier Size: 0
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.0) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 16, Time: 0.009) Frontier Size: 15
+f(n) = 6.0 (Expanded Nodes: 17, Evaluated States: 32, Time: 0.012) Frontier Size: 15
+f(n) = 7.0 (Expanded Nodes: 33, Evaluated States: 64, Time: 0.014) Frontier Size: 31
+f(n) = 8.0 (Expanded Nodes: 65, Evaluated States: 336, Time: 0.018) Frontier Size: 271
 Extracting plan with execution delta: 1
 Problem Solved
 
 Found Plan:
-0: (start_movement_decrease L2 L3 ZAXES)
+0: (start_movement_increase L1 L2 ZAXES)
 0: -----waiting---- [10]
-10: (stop_movement_decrease L2 L3 ZAXES)
-10: (start_movement_increase L4 L5 ZAXES)
-10: -----waiting---- [20]
-20: (stop_movement_increase L4 L5 ZAXES)
-20: (start_movement_increase L4 L5 xyaxes)
-20: -----waiting---- [26]
+10: (stop_movement_increase L1 L2 ZAXES)
+10: (start_movement_increase L3 L4 xyaxes)
+10: -----waiting---- [16]
 
-Plan-Length:33
-Elapsed Time: 26
-Metric (Search):8.0
-Planning Time (msec): 160
-Heuristic Time (msec): 25
-Search Time (msec): 37
-Expanded Nodes:10
-States Evaluated:54
+Plan-Length:19
+Elapsed Time: 16
+Metric (Search):5.0
+Planning Time (msec): 149
+Heuristic Time (msec): 0
+Search Time (msec): 24
+Expanded Nodes:153
+States Evaluated:510
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:6
+Number of Duplicates detected:116
+
+STDERR

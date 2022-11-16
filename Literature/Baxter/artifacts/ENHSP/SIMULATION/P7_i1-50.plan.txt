@@ -1,4 +1,5 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i1 -delta 50 -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i1 -delta 50 -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
@@ -14,55 +15,36 @@ Delta time heuristic model:50
 Delta time planning model:50
 Delta time search-execution model:50
 Delta time validation model:50
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=88.0
-f(n) = 352.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
-f(n) = 365.0 (Expanded Nodes: 1, Evaluated States: 24, Time: 0.028) Frontier Size: 23
-f(n) = 366.0 (Expanded Nodes: 5, Evaluated States: 28, Time: 0.03) Frontier Size: 23
-f(n) = 368.0 (Expanded Nodes: 13, Evaluated States: 124, Time: 0.068) Frontier Size: 111
-f(n) = 369.0 (Expanded Nodes: 25, Evaluated States: 132, Time: 0.072) Frontier Size: 107
-f(n) = 371.0 (Expanded Nodes: 37, Evaluated States: 224, Time: 0.087) Frontier Size: 187
-f(n) = 373.0 (Expanded Nodes: 45, Evaluated States: 224, Time: 0.088) Frontier Size: 179
-f(n) = 374.0 (Expanded Nodes: 49, Evaluated States: 228, Time: 0.088) Frontier Size: 179
-f(n) = 376.0 (Expanded Nodes: 173, Evaluated States: 824, Time: 0.172) Frontier Size: 651
-f(n) = 377.0 (Expanded Nodes: 201, Evaluated States: 840, Time: 0.174) Frontier Size: 639
-f(n) = 379.0 (Expanded Nodes: 297, Evaluated States: 1232, Time: 0.221) Frontier Size: 935
-f(n) = 380.0 (Expanded Nodes: 361, Evaluated States: 1240, Time: 0.223) Frontier Size: 871
-f(n) = 381.0 (Expanded Nodes: 369, Evaluated States: 1240, Time: 0.223) Frontier Size: 863
-f(n) = 382.0 (Expanded Nodes: 373, Evaluated States: 1244, Time: 0.223) Frontier Size: 863
-f(n) = 383.0 (Expanded Nodes: 1281, Evaluated States: 4072, Time: 0.497) Frontier Size: 2759
-f(n) = 384.0 (Expanded Nodes: 1297, Evaluated States: 4072, Time: 0.497) Frontier Size: 2743
-f(n) = 385.0 (Expanded Nodes: 1341, Evaluated States: 4096, Time: 0.499) Frontier Size: 2723
-f(n) = 386.0 (Expanded Nodes: 1989, Evaluated States: 5704, Time: 0.647) Frontier Size: 3659
-f(n) = 387.0 (Expanded Nodes: 1997, Evaluated States: 5704, Time: 0.647) Frontier Size: 3651
-f(n) = 388.0 (Expanded Nodes: 2165, Evaluated States: 5728, Time: 0.65) Frontier Size: 3491
-f(n) = 389.0 (Expanded Nodes: 2277, Evaluated States: 5728, Time: 0.651) Frontier Size: 3371
-f(n) = 390.0 (Expanded Nodes: 2281, Evaluated States: 5732, Time: 0.652) Frontier Size: 3371
-f(n) = 391.0 (Expanded Nodes: 7269, Evaluated States: 17944, Time: 1.781) Frontier Size: 10427
-f(n) = 392.0 (Expanded Nodes: 7517, Evaluated States: 17944, Time: 1.782) Frontier Size: 10163
-f(n) = 393.0 (Expanded Nodes: 7577, Evaluated States: 17976, Time: 1.785) Frontier Size: 10135
-f(n) = 394.0 (Expanded Nodes: 10971, Evaluated States: 24490, Time: 2.39) Frontier Size: 13127
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.0) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 24, Time: 0.009) Frontier Size: 23
+f(n) = 6.0 (Expanded Nodes: 25, Evaluated States: 48, Time: 0.012) Frontier Size: 23
+f(n) = 7.0 (Expanded Nodes: 49, Evaluated States: 72, Time: 0.013) Frontier Size: 23
+f(n) = 8.0 (Expanded Nodes: 73, Evaluated States: 624, Time: 0.017) Frontier Size: 551
 Extracting plan with execution delta: 50
 Problem Solved
 
 Found Plan:
-0: (start_movement_decrease L2 L3 ZAXES)
+0: (start_movement_decrease L2 L3 xyaxes)
 0: -----waiting---- [50]
-50: (stop_movement_decrease L2 L3 ZAXES)
-50: (start_movement_decrease L2 L3 xyaxes)
+50: (stop_movement_decrease L2 L3 xyaxes)
+50: (start_movement_decrease L1 L2 ZAXES)
 50: -----waiting---- [100]
 
-Plan-Length:15
+Plan-Length:16
 Elapsed Time: 100
 Metric (Search):5.0
-Planning Time (msec): 2528
-Heuristic Time (msec): 2272
-Search Time (msec): 2392
-Expanded Nodes:11026
-States Evaluated:24519
+Planning Time (msec): 154
+Heuristic Time (msec): 0
+Search Time (msec): 20
+Expanded Nodes:141
+States Evaluated:665
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:18695
+Number of Duplicates detected:165
+
+STDERR

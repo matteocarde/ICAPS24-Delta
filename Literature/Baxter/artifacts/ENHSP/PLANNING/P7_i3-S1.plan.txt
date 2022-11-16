@@ -1,0 +1,46 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i3 -de 1 -dp 1 -h hrma -s WAStar -wh 4
+STDOUT
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 13
+Aibr Preprocessing
+|F|:32
+|X|:12
+Aibr Preprocessing
+|A|:48
+|P|:84
+|E|:24
+Delta time heuristic model:1.0
+Delta time planning model:1
+Delta time search-execution model:1
+Delta time validation model:1
+Folding back to 1-0 heuristic. Input heuristic is not supported
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.0) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 24, Time: 0.008) Frontier Size: 23
+f(n) = 6.0 (Expanded Nodes: 25, Evaluated States: 48, Time: 0.01) Frontier Size: 23
+f(n) = 7.0 (Expanded Nodes: 49, Evaluated States: 96, Time: 0.012) Frontier Size: 47
+f(n) = 8.0 (Expanded Nodes: 97, Evaluated States: 696, Time: 0.017) Frontier Size: 599
+f(n) = 9.0 (Expanded Nodes: 697, Evaluated States: 1825, Time: 0.028) Frontier Size: 1128
+f(n) = 10.0 (Expanded Nodes: 1826, Evaluated States: 3752, Time: 0.043) Frontier Size: 1926
+f(n) = 11.0 (Expanded Nodes: 3753, Evaluated States: 12327, Time: 0.07) Frontier Size: 8574
+f(n) = 12.0 (Expanded Nodes: 12328, Evaluated States: 33418, Time: 0.16) Frontier Size: 21090
+f(n) = 13.0 (Expanded Nodes: 33419, Evaluated States: 74000, Time: 0.344) Frontier Size: 40581
+f(n) = 14.0 (Expanded Nodes: 74001, Evaluated States: 180331, Time: 0.565) Frontier Size: 106330
+f(n) = 15.0 (Expanded Nodes: 180332, Evaluated States: 437425, Time: 1.16) Frontier Size: 257093
+f(n) = 16.0 (Expanded Nodes: 437426, Evaluated States: 970746, Time: 2.466) Frontier Size: 533320
+f(n) = 17.0 (Expanded Nodes: 970747, Evaluated States: 2128966, Time: 5.452) Frontier Size: 1158219
+-------------Time: 10s ; Expanded Nodes: 1641261 (Avg-Speed 164126.0 n/s); Evaluated States: 3906961
+f(n) = 18.0 (Expanded Nodes: 2128967, Evaluated States: 4652973, Time: 12.103) Frontier Size: 2524006
+-------------Time: 20s ; Expanded Nodes: 3222339 (Avg-Speed 161116.0 n/s); Evaluated States: 7389272
+f(n) = 19.0 (Expanded Nodes: 4652974, Evaluated States: 9847464, Time: 26.483) Frontier Size: 5194490
+-------------Time: 30s ; Expanded Nodes: 5171513 (Avg-Speed 172383.0 n/s); Evaluated States: 11801818
+-------------Time: 40s ; Expanded Nodes: 6095347 (Avg-Speed 152383.0 n/s); Evaluated States: 14249774
+-------------Time: 50s ; Expanded Nodes: 8015538 (Avg-Speed 160310.0 n/s); Evaluated States: 17981344
+f(n) = 20.0 (Expanded Nodes: 9847465, Evaluated States: 20351844, Time: 58.839) Frontier Size: 10504379
+
+STDERR

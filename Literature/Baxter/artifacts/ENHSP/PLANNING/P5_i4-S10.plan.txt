@@ -1,8 +1,9 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i4 -de 1 -dp 10 -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i4 -de 1 -dp 10 -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
-Grounding Time: 12
+Grounding Time: 11
 Aibr Preprocessing
 |F|:22
 |X|:8
@@ -14,30 +15,37 @@ Delta time heuristic model:1.0
 Delta time planning model:10
 Delta time search-execution model:1
 Delta time validation model:1
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=200.0
-f(n) = 800.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.004) Frontier Size: 0
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 16, Time: 0.009) Frontier Size: 15
+f(n) = 6.0 (Expanded Nodes: 17, Evaluated States: 32, Time: 0.012) Frontier Size: 15
+f(n) = 7.0 (Expanded Nodes: 33, Evaluated States: 64, Time: 0.014) Frontier Size: 31
+f(n) = 8.0 (Expanded Nodes: 65, Evaluated States: 336, Time: 0.018) Frontier Size: 271
+f(n) = 9.0 (Expanded Nodes: 337, Evaluated States: 838, Time: 0.03) Frontier Size: 501
 Extracting plan with execution delta: 1
 Problem Solved
 
 Found Plan:
-0: (start_movement_increase L4 L5 ZAXES)
+0: (start_movement_increase L3 L4 ZAXES)
 0: -----waiting---- [20]
-20: (stop_movement_increase L4 L5 ZAXES)
+20: (stop_movement_increase L3 L4 ZAXES)
 20: (start_movement_increase L2 L3 xyaxes)
 20: -----waiting---- [24]
 
-Plan-Length:28
+Plan-Length:29
 Elapsed Time: 24
 Metric (Search):6.0
-Planning Time (msec): 196
-Heuristic Time (msec): 46
-Search Time (msec): 61
-Expanded Nodes:27
-States Evaluated:115
+Planning Time (msec): 149
+Heuristic Time (msec): 0
+Search Time (msec): 31
+Expanded Nodes:348
+States Evaluated:882
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:21
+Number of Duplicates detected:302
+
+STDERR

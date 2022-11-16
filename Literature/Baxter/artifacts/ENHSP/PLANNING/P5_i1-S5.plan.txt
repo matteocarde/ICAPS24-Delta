@@ -1,8 +1,9 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i1 -de 1 -dp 5 -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P5_i1 -de 1 -dp 5 -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
-Grounding Time: 11
+Grounding Time: 12
 Aibr Preprocessing
 |F|:22
 |X|:8
@@ -14,31 +15,32 @@ Delta time heuristic model:1.0
 Delta time planning model:5
 Delta time search-execution model:1
 Delta time validation model:1
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=223.0
-f(n) = 892.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.004) Frontier Size: 0
-f(n) = 901.0 (Expanded Nodes: 1, Evaluated States: 16, Time: 0.026) Frontier Size: 15
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 16, Time: 0.009) Frontier Size: 15
+f(n) = 6.0 (Expanded Nodes: 17, Evaluated States: 32, Time: 0.011) Frontier Size: 15
+f(n) = 7.0 (Expanded Nodes: 33, Evaluated States: 64, Time: 0.013) Frontier Size: 31
 Extracting plan with execution delta: 1
 Problem Solved
 
 Found Plan:
-0: (start_movement_decrease L4 L5 xyaxes)
-0: -----waiting---- [5]
-5: (stop_movement_decrease L4 L5 xyaxes)
-5: (start_movement_decrease L4 L5 ZAXES)
-5: -----waiting---- [16]
+0: (start_movement_decrease L4 L5 ZAXES)
+0: -----waiting---- [11]
 
-Plan-Length:20
-Elapsed Time: 16
-Metric (Search):7.0
-Planning Time (msec): 172
-Heuristic Time (msec): 29
-Search Time (msec): 44
-Expanded Nodes:10
-States Evaluated:56
+Plan-Length:13
+Elapsed Time: 11
+Metric (Search):4.0
+Planning Time (msec): 147
+Heuristic Time (msec): 0
+Search Time (msec): 15
+Expanded Nodes:51
+States Evaluated:215
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:4
+Number of Duplicates detected:25
+
+STDERR

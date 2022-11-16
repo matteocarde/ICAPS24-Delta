@@ -1,0 +1,51 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P6_i5 -delta 10 -h hrma -s WAStar -wh 4
+STDOUT
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 13
+Aibr Preprocessing
+|F|:27
+|X|:10
+Aibr Preprocessing
+|A|:40
+|P|:60
+|E|:20
+Delta time heuristic model:10
+Delta time planning model:10
+Delta time search-execution model:10
+Delta time validation model:10
+Folding back to 1-0 heuristic. Input heuristic is not supported
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 20, Time: 0.009) Frontier Size: 19
+f(n) = 6.0 (Expanded Nodes: 21, Evaluated States: 40, Time: 0.011) Frontier Size: 19
+f(n) = 7.0 (Expanded Nodes: 41, Evaluated States: 80, Time: 0.013) Frontier Size: 39
+f(n) = 8.0 (Expanded Nodes: 81, Evaluated States: 500, Time: 0.017) Frontier Size: 419
+f(n) = 9.0 (Expanded Nodes: 501, Evaluated States: 1292, Time: 0.027) Frontier Size: 791
+Extracting plan with execution delta: 10
+Problem Solved
+
+Found Plan:
+0: (start_movement_decrease L2 L3 xyaxes)
+0: -----waiting---- [20]
+20: (stop_movement_decrease L2 L3 xyaxes)
+20: (start_movement_decrease L4 L5 ZAXES)
+20: -----waiting---- [30]
+
+Plan-Length:11
+Elapsed Time: 30
+Metric (Search):6.0
+Planning Time (msec): 163
+Heuristic Time (msec): 0
+Search Time (msec): 27
+Expanded Nodes:517
+States Evaluated:1331
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:457
+
+STDERR

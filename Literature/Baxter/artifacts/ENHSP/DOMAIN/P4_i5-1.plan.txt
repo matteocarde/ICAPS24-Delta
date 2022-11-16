@@ -1,4 +1,5 @@
-$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_15_00_29_51/DOMAIN/P4_i5-1.pddl -h aibr -s WAStar -wh 4
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain-delta.pddl --problem benchmarks/delta/Baxter/delta-problems/2022_11_16_10_18_15/DOMAIN/P4_i5-1.pddl -h hrma -s WAStar -wh 4
+STDOUT
 Domain parsed
 Problem parsed
 Grounding..
@@ -14,29 +15,22 @@ Delta time heuristic model:1.0
 Delta time planning model:1.0
 Delta time search-execution model:1.0
 Delta time validation model:1
-AIBR selected
+Folding back to 1-0 heuristic. Input heuristic is not supported
 w_h set to be 4
 Setting horizon to:NaN
 Running WA-STAR
-h(n = s_0)=256.0
-f(n) = 1024.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.003) Frontier Size: 0
-f(n) = 1025.0 (Expanded Nodes: 1, Evaluated States: 13, Time: 0.022) Frontier Size: 12
-f(n) = 1026.0 (Expanded Nodes: 2, Evaluated States: 26, Time: 0.028) Frontier Size: 24
-f(n) = 1027.0 (Expanded Nodes: 3, Evaluated States: 39, Time: 0.034) Frontier Size: 36
-f(n) = 1028.0 (Expanded Nodes: 4, Evaluated States: 52, Time: 0.039) Frontier Size: 48
-f(n) = 1029.0 (Expanded Nodes: 5, Evaluated States: 65, Time: 0.045) Frontier Size: 60
-f(n) = 1030.0 (Expanded Nodes: 6, Evaluated States: 78, Time: 0.048) Frontier Size: 72
-f(n) = 1031.0 (Expanded Nodes: 7, Evaluated States: 91, Time: 0.051) Frontier Size: 84
-f(n) = 1032.0 (Expanded Nodes: 8, Evaluated States: 104, Time: 0.054) Frontier Size: 96
-f(n) = 1033.0 (Expanded Nodes: 9, Evaluated States: 117, Time: 0.056) Frontier Size: 108
-f(n) = 1034.0 (Expanded Nodes: 10, Evaluated States: 130, Time: 0.059) Frontier Size: 120
-f(n) = 1035.0 (Expanded Nodes: 11, Evaluated States: 143, Time: 0.061) Frontier Size: 132
-f(n) = 1036.0 (Expanded Nodes: 12, Evaluated States: 156, Time: 0.063) Frontier Size: 144
-f(n) = 1037.0 (Expanded Nodes: 13, Evaluated States: 169, Time: 0.065) Frontier Size: 156
-f(n) = 1038.0 (Expanded Nodes: 14, Evaluated States: 182, Time: 0.067) Frontier Size: 168
-f(n) = 1039.0 (Expanded Nodes: 15, Evaluated States: 195, Time: 0.07) Frontier Size: 180
-f(n) = 1040.0 (Expanded Nodes: 16, Evaluated States: 208, Time: 0.071) Frontier Size: 192
-f(n) = 1041.0 (Expanded Nodes: 17, Evaluated States: 221, Time: 0.073) Frontier Size: 204
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.0) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 13, Time: 0.008) Frontier Size: 12
+f(n) = 6.0 (Expanded Nodes: 14, Evaluated States: 38, Time: 0.01) Frontier Size: 24
+f(n) = 7.0 (Expanded Nodes: 39, Evaluated States: 87, Time: 0.011) Frontier Size: 48
+f(n) = 8.0 (Expanded Nodes: 88, Evaluated States: 292, Time: 0.015) Frontier Size: 204
+f(n) = 9.0 (Expanded Nodes: 293, Evaluated States: 776, Time: 0.021) Frontier Size: 483
+f(n) = 10.0 (Expanded Nodes: 777, Evaluated States: 1726, Time: 0.028) Frontier Size: 949
+f(n) = 11.0 (Expanded Nodes: 1727, Evaluated States: 4006, Time: 0.039) Frontier Size: 2279
+f(n) = 12.0 (Expanded Nodes: 4007, Evaluated States: 8973, Time: 0.055) Frontier Size: 4966
+f(n) = 13.0 (Expanded Nodes: 8974, Evaluated States: 18745, Time: 0.087) Frontier Size: 9771
+f(n) = 14.0 (Expanded Nodes: 18746, Evaluated States: 37994, Time: 0.139) Frontier Size: 19248
 Extracting plan with execution delta: 1.0
 Problem Solved
 
@@ -47,11 +41,13 @@ Found Plan:
 Plan-Length:22
 Elapsed Time: 10.0
 Metric (Search):11.0
-Planning Time (msec): 199
-Heuristic Time (msec): 63
-Search Time (msec): 76
-Expanded Nodes:31
-States Evaluated:255
+Planning Time (msec): 348
+Heuristic Time (msec): 1
+Search Time (msec): 216
+Expanded Nodes:36501
+States Evaluated:73351
 Fixed constraint violations during search (zero-crossing):0
 Number of Dead-Ends detected:0
-Number of Duplicates detected:3
+Number of Duplicates detected:40140
+
+STDERR

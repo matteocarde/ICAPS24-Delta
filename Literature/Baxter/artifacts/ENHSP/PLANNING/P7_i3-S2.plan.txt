@@ -1,0 +1,57 @@
+$ timeout 60 java -jar ~/Bin/ENHSP-22/enhsp.jar --domain benchmarks/delta/Baxter/domain.pddl --problem benchmarks/delta/Baxter/P7_i3 -de 1 -dp 2 -h hrma -s WAStar -wh 4
+STDOUT
+Domain parsed
+Problem parsed
+Grounding..
+Grounding Time: 15
+Aibr Preprocessing
+|F|:32
+|X|:12
+Aibr Preprocessing
+|A|:48
+|P|:84
+|E|:24
+Delta time heuristic model:1.0
+Delta time planning model:2
+Delta time search-execution model:1
+Delta time validation model:1
+Folding back to 1-0 heuristic. Input heuristic is not supported
+w_h set to be 4
+Setting horizon to:NaN
+Running WA-STAR
+h(n = s_0)=1.0
+f(n) = 4.0 (Expanded Nodes: 0, Evaluated States: 0, Time: 0.001) Frontier Size: 0
+f(n) = 5.0 (Expanded Nodes: 1, Evaluated States: 24, Time: 0.009) Frontier Size: 23
+f(n) = 6.0 (Expanded Nodes: 25, Evaluated States: 48, Time: 0.012) Frontier Size: 23
+f(n) = 7.0 (Expanded Nodes: 49, Evaluated States: 96, Time: 0.013) Frontier Size: 47
+f(n) = 8.0 (Expanded Nodes: 97, Evaluated States: 696, Time: 0.019) Frontier Size: 599
+f(n) = 9.0 (Expanded Nodes: 697, Evaluated States: 1829, Time: 0.035) Frontier Size: 1132
+f(n) = 10.0 (Expanded Nodes: 1830, Evaluated States: 3776, Time: 0.052) Frontier Size: 1946
+f(n) = 11.0 (Expanded Nodes: 3777, Evaluated States: 12849, Time: 0.093) Frontier Size: 9072
+f(n) = 12.0 (Expanded Nodes: 12850, Evaluated States: 34367, Time: 0.24) Frontier Size: 21517
+f(n) = 13.0 (Expanded Nodes: 34368, Evaluated States: 76270, Time: 0.52) Frontier Size: 41902
+f(n) = 14.0 (Expanded Nodes: 76271, Evaluated States: 191734, Time: 0.786) Frontier Size: 115463
+f(n) = 15.0 (Expanded Nodes: 191735, Evaluated States: 466123, Time: 1.574) Frontier Size: 274388
+Extracting plan with execution delta: 1
+Problem Solved
+
+Found Plan:
+0: (start_movement_decrease L2 L3 xyaxes)
+0: -----waiting---- [8]
+8: (stop_movement_decrease L2 L3 xyaxes)
+8: (start_movement_decrease L2 L3 ZAXES)
+8: -----waiting---- [17]
+
+Plan-Length:26
+Elapsed Time: 17
+Metric (Search):12.0
+Planning Time (msec): 1718
+Heuristic Time (msec): 20
+Search Time (msec): 1577
+Expanded Nodes:192180
+States Evaluated:467190
+Fixed constraint violations during search (zero-crossing):0
+Number of Dead-Ends detected:0
+Number of Duplicates detected:196480
+
+STDERR
