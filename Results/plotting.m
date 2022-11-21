@@ -21,12 +21,12 @@ opts = setvaropts(opts, "Time", "WhitespaceRule", "preserve");
 opts = setvaropts(opts, ["Experiment", "Problem", "Type", "Time"], "EmptyFieldRule", "auto");
 
 % Import the data
-enhsp = readtable("enhsp.csv", opts);
+enhsp = readtable("enhsp-0.1.csv", opts);
 
 enhsp.Result = enhsp.Time;
 enhsp.Result(enhsp.Time ~= "TO" & enhsp.Time ~= "UNSAT" & enhsp.Time ~= "") = "FOUND";
 enhsp.Result(enhsp.Time == "") = "TO";
-enhsp.Time(enhsp.Result == "TO") = "60000";
+enhsp.Time(enhsp.Result == "TO") = string(300 *1000);
 enhsp.Time = str2double(enhsp.Time);
 
 upm = readtable("upm.csv");
@@ -34,10 +34,15 @@ upm.CPU_Time(upm.Risolto == "false") = 60;
 upm.CPU_Time(upm.CPU_Time > 60) = 60;
 
 %% Plot
-experiments = ["Baxter", "Descent", "HVAC", "Linear-Car", "Linear-Car-2", "Linear-Generator", "Solar-Rover"];
+experiments = unique(enhsp.Experiment);
 types = unique(enhsp.Type);
 deltas = unique(enhsp.Delta);
 T = [];
+
+
+t = tiledlayout(length(experiments),2,'TileSpacing','Compact','Padding','Compact');
+f = figure(1);
+f.Position = [100 100 1600 1000/6*length(experiments)];
 
 for i=1:length(experiments)
     experiment = string(experiments(i));
@@ -74,35 +79,26 @@ for i=1:length(experiments)
         end
         T = [T;row];
     end
-end
-
-T= array2table(T,'VariableNames',{'Domain','Type','Metric','ENHSP1','ENHSP2','ENHSP3','ENHSP5','ENHSP10','ENHSP50','ENHSP100','UPM1','UPM2','UPM3','UPM5','UPM10','UPM50','UPM100'})
-
-
-t = tiledlayout(length(experiments),2,'TileSpacing','Compact','Padding','Compact');
-f = figure(1);
-f.Position = [100 100 1600 1000];
-
-for i=1:length(experiments)
-    experiment = string(experiments(i));
     
     nexttile
     x = deltas;
-    filter = T.Domain == experiment & T.Metric == "Time";
-    timeDomain = table2array(T(filter & T.Type == "DOMAIN", 4:10));
-    timePlanning = table2array(T(filter & T.Type == "PLAN", 4:10));
-    timeSimu = table2array(T(filter & T.Type == "SIMU", 4:10));
-    timeUPM = table2array(T(filter & T.Type == "DOMAIN", 11:17));
+    filter = T(:,1) == experiment & T(:,3) == "Time";
+    timeDomain = T(filter & T(:,2) == "DOMAIN", 4:4+length(deltas)-1);
+    timePlanning = T(filter & T(:,2) == "PLAN", 4:4+length(deltas)-1);
+    timeSimu = T(filter & T(:,2) == "SIMU", 4:4+length(deltas)-1);
+    timeUPM = zeros(1,length(deltas)); %table2array(T(filter & T.Type == "DOMAIN", 11:17));
     time = str2double([timePlanning' timeSimu' timeDomain' timeUPM']);
     
-    semilogx(x,time,"-o",'LineWidth',2);
+    ylim([0 600])
+    loglog(x,time,"-o",'LineWidth',2);
     grid on;
     box on;
     xticks(deltas);
-    xlim([0 100]);
+    xlim([min(deltas) max(deltas)]);
     ylabel("Planning Time");
     xlabel("Delta");
-    yticks([0 20 40 60])
+    yticks([0 1 10 30 60 300 600])
+    ylim([0 600])
     set(gca,'Yticklabel',get(gca,'Ytick')+"s");
     hold on;
     t = title(experiment+" Planning Time");
@@ -114,11 +110,11 @@ for i=1:length(experiments)
     %set(l,'Position',[0.598928571428571 0.8375 0.144642857142857 0.0904761904761905]);
     
     nexttile
-    filter = T.Domain == experiment & T.Metric == "Coverage";
-    coverageDomain = table2array(T(filter & T.Type == "DOMAIN", 4:10));
-    coveragePlanning = table2array(T(filter & T.Type == "PLAN", 4:10));
-    coverageSimu = table2array(T(filter & T.Type == "SIMU", 4:10));
-    coverageUPM = table2array(T(filter & T.Type == "DOMAIN", 11:17));
+    filter = T(:,1) == experiment & T(:,3) == "Coverage";
+    coverageDomain = T(filter & T(:,2) == "DOMAIN", 4:4+length(deltas)-1);
+    coveragePlanning = T(filter & T(:,2) == "PLAN", 4:4+length(deltas)-1);
+    coverageSimu = T(filter & T(:,2) == "SIMU", 4:4+length(deltas)-1);
+    coverageUPM = zeros(1,length(deltas)); %table2array(T(filter & T.Type == "DOMAIN", 11:17));
     
     coverage = str2double([coveragePlanning' coverageSimu' coverageDomain' coverageUPM']);
     hold on;

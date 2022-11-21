@@ -1,5 +1,5 @@
 (define (domain car_linear_mt_sc)
-	;(:requirements :fluents :durative-actions :duration-inequalities :adl :typing :time)
+    ;(:requirements :fluents :durative-actions :duration-inequalities :adl :typing :time)
     (:predicates
         (engine_running)
         (engine_stopped)
@@ -36,8 +36,11 @@
 
     (:action stop_car
         :parameters ()
-        :precondition (and (> (v) -0.1)
-            (< (v) 0.1) (= (a) 0.0) (engine_running))
+        :precondition (and
+            (> (v) -0.1)
+            (< (v) 0.1) 
+            (= (a) 0.0) 
+            (engine_running))
         :effect (and
             (assign (v) 0.0)
             (engine_stopped)
