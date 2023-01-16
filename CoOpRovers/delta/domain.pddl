@@ -1,6 +1,6 @@
 (define (domain robots)
 
-  (:requirements :fluents :durative-actions :duration-inequalities :adl :typing :time)
+  ;(:requirements :fluents :durative-actions :duration-inequalities :adl :typing :time)
   (:types
     robot room obj
   )
@@ -11,11 +11,10 @@
     (allowed ?r - robot ?l - room)
     (holding ?r - robot ?o - obj)
     (handsFull ?r - robot)
-    (ismoving ?r - robot ?a - room ?b - room)
+    (moving ?r - robot ?a - room ?b - room)
     (inMovement ?r - robot)
-    (ischarging ?r - robot)
+    (charging ?r - robot)
     (link ?a - room ?b - room)
-    (alwaysfalse)
   )
   (:functions
     (speed ?r - robot)
@@ -42,10 +41,11 @@
     )
     :effect (and
       (not (atRobot ?r ?a))
-      (ismoving ?r ?a ?b)
+      (moving ?r ?a ?b)
       (inMovement ?r)
       (assign (distanceRun ?r ?a ?b) 0)
       (assign (d ?r) (deltaMovement ?r))
+      (assign (charges ?r) 0)
     )
   )
 
@@ -53,7 +53,7 @@
     :parameters (?r - robot ?a - room ?b - room)
     :precondition (and
       (link ?a ?b)
-      (ismoving ?r ?a ?b)
+      (moving ?r ?a ?b)
       (inMovement ?r)
       (< (distanceRun ?r ?a ?b) (distance ?a ?b))
       (>= (battery ?r) 20)
@@ -69,14 +69,14 @@
     :parameters (?r - robot ?a - room ?b - room)
     :precondition (and
       (link ?a ?b)
-      (ismoving ?r ?a ?b)
+      (moving ?r ?a ?b)
       (inMovement ?r)
       (>= (battery ?r) 20)
       (>= (distanceRun ?r ?a ?b) (distance ?a ?b))
     )
     :effect (and
       (atRobot ?r ?b)
-      (not (ismoving ?r ?a ?b))
+      (not (moving ?r ?a ?b))
       (not (inMovement ?r))
     )
   )
@@ -90,7 +90,7 @@
     )
     :effect (and
       (not (inMovement ?r))
-      (ischarging ?r)
+      (charging ?r)
       (assign (d ?r) (deltaCharging ?r))
     )
   )
@@ -98,7 +98,7 @@
   (:process charging
     :parameters (?r - robot)
     :precondition (and
-      (ischarging ?r)
+      (charging ?r)
       (< (battery ?r) 100)
     )
     :effect (and
@@ -110,7 +110,7 @@
     :parameters (?r - robot)
     :precondition (and
       (handsFull ?r)
-      (not (ischarging ?r))
+      (not (charging ?r))
       (>= (battery ?r) 0)
     )
     :effect (and
@@ -124,10 +124,10 @@
     :parameters (?r - robot)
     :precondition (and
       (= (ck) (tk ?r))
-      (ischarging ?r)
+      (charging ?r)
     )
     :effect (and
-      (not (ischarging ?r))
+      (not (charging ?r))
       (inMovement ?r)
       (assign (d ?r) (deltaMovement ?r))
     )
@@ -168,16 +168,17 @@
     :parameters (?r - robot)
     :precondition (and
       (> (d ?r) 0)
-      (= (ck) (+ (tk ?r) 3))
+      (= (ck) (+ (tk ?r) #t))
     )
     :effect (and
-      (assign (tk ?r) (- (+ (ck) (d ?r)) 3))
+      (assign (tk ?r) (- (+ (ck) (d ?r)) #t))
     )
   )
 
   (:process ticking
     :parameters ()
-    :precondition (and (not (alwaysfalse)))
+    :precondition (and
+    )
     :effect (and
       (increase (ck) (* #t 1.0))
     )
