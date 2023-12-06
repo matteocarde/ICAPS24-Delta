@@ -5,7 +5,6 @@
 	)
 	(:predicates
 		(alwaysfalse)
-		(edge)
 		(gboff ?gb - generalBattery)
 		(gbon ?gb - generalBattery)
 		(off ?b - battery)
@@ -18,44 +17,16 @@
 		(roversafe)
 	)
 	(:functions
-		(ck)
-		(tk)
-		(delta)
 		(roverenergy)
 		(SoC ?b - battery)
 		(time)
 		(sunexposure_time)
 	)
 
-	(:event tic
-		:parameters ()
-		:precondition (and
-			(= (ck) (+ (tk) #t))
-		)
-		:effect (and
-			(assign (tk) (- (+ (ck) (delta)) #t))
-		)
-	)
-
-	(:process ticking
-		:parameters ()
-		:precondition (
-
-		)
-		:effect (and
-			(increase (ck) (* #t 1.0))
-		)
-	)
-
 	(:action switchGenBatteryOn
 		:parameters (?gb - generalBattery)
-		:precondition ( and
-			(= (ck) (tk))
-			(gboff ?gb)
-
-		)
-		:effect (and
-			(gbon ?gb) (not (gboff ?gb))
+		:precondition ( and (gboff ?gb))
+		:effect (and (gbon ?gb) (not (gboff ?gb))
 			(roversafe)
 			(increase (roverenergy) 100)
 		)
@@ -63,9 +34,7 @@
 
 	(:action start_useBattery
 		:parameters (?b - battery)
-		:precondition (and
-			(= (ck) (tk))
-			(off ?b))
+		:precondition (and(off ?b))
 		:effect (and
 			(increase (roverenergy) 10)
 			(on ?b)
@@ -99,12 +68,7 @@
 
 	(:action sendData
 		:parameters ()
-		:precondition (and
-			(= (ck) (tk))
-			(datatosend)
-			(roversafe)
-			(>= (roverenergy) 500)
-		)
+		:precondition (and (datatosend) (roversafe) (>= (roverenergy) 500))
 		:effect (and (datasent) (not (datatosend)))
 	)
 

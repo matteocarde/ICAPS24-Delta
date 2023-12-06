@@ -1,7 +1,7 @@
 ;;Planning for controlling hvac (Heating, Ventilation and  Air-Conditioning). First very coarse abstraction, which uses a discrete interepretation of the problem where #t = 1 
 ;;and ignores many thermal aspects of the problem
 (define (domain hvac)
-   (:requirements :fluents :durative-actions :adl :typing :time)
+   ;(:requirements :fluents :durative-actions :adl :typing :time)
    (:types
       room request -object
    )
@@ -10,13 +10,12 @@
       (alwaysfalse)
       (edge)
       (satisfied ?r -request)
-      (block)
    )
    (:functions
       (ck)
       (delta)
       (tk)
-      (air_flow ?l -room) ;; air-flow rate 
+      (air-flow ?l -room) ;; air-flow rate 
       (temp ?l -room) ;;temperature of the room. This variable is not controlled directly
       (temp_sa ?l -room) ;;supply air temperature. This variable is controlled directly
       (time) ;; this keeps track of the time. This is meant to allow us to capture the specific time-slot
@@ -26,27 +25,27 @@
    )
 
    (:event tic
-        :parameters ()
-        :precondition (and
-            (= (ck) (+ (tk) 0.1))
-        )
-        :effect (and
-            (assign (tk) (- (+ (ck) (delta)) 0.1))
-        )
-    )
+      :parameters ()
+      :precondition (and
+         (= (ck) (+ (tk) #t))
+      )
+      :effect (and
+         (assign (tk) (- (+ (ck) (delta)) #t))
+      )
+   )
 
-    (:process ticking
-        :parameters ()
-        :precondition (and(not(alwaysfalse)))
-        :effect (and
-            (increase (ck) (* #t 1.0))
-        )
-    )
+   (:process ticking
+      :parameters ()
+      :precondition (
+      )
+      :effect (and
+         (increase (ck) (* #t 1.0))
+      )
+   )
 
    (:action satisfier
       :parameters (?l -room ?r -request)
       :precondition (and
-         (not (block))
          (= (ck) (tk))
          (<= (temp ?l) (+ (temp_requested ?l ?r) (comfort)))
          (>= (temp ?l) (- (temp_requested ?l ?r) (comfort)))
@@ -54,11 +53,17 @@
       :effect (and (satisfied ?r))
    )
 
+   (:constraint temperature_domain
+      :parameters (?l -room)
+      ;;Constraint on the possible temperature in a room
+      :condition (and (<= (temp ?l) 30) (>= (temp ?l) 10))
+   )
+
    ;; this process models the passing of time
    (:process time_passing
       :parameters ()
-      :precondition (and (not(alwaysfalse)))
-      :effect (and (increase (time) (* #t 1)))
+      :precondition (and(not(alwaysfalse)))
+      :effect (increase (time) (* #t 1))
    )
 
    ;; this process models how the temperature changes along the time according to the air-flow and the temp_sa. Many other parameters have to be added. 
@@ -75,7 +80,6 @@
    (:action increase_air_flow
       :parameters (?l -room)
       :precondition (and
-         (not (block))
          (= (ck) (tk))
          (<= (air_flow ?l) 3))
       :effect (and(increase (air_flow ?l) 1))
@@ -84,7 +88,6 @@
    (:action decrease_air_flow
       :parameters (?l -room)
       :precondition (and
-         (not (block))
          (= (ck) (tk))
          (>= (air_flow ?l) 1))
       :effect (and(decrease (air_flow ?l) 1))
@@ -93,7 +96,6 @@
    (:action increase_temp
       :parameters (?l -room)
       :precondition (and
-         (not (block))
          (= (ck) (tk))
          (<= (temp_sa ?l) 29)
       )
@@ -103,17 +105,10 @@
    (:action decrease_temp
       :parameters (?l -room)
       :precondition (and
-         (not (block))
          (>= (temp_sa ?l) 11)
          (= (ck) (tk))
       )
       :effect (and(decrease (temp_sa ?l) 1))
    )
-
-    (:event temperature_constraint
-     :parameters (?l - room)
-     :precondition (and (not (block)) (not (and (<= (temp ?l) 30) (>= (temp ?l) 10))))
-     :effect (and (block))
-    )
 
 )
